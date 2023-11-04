@@ -45,7 +45,7 @@ public class RoomViews : MonoBehaviour
         currentViewIndex--; // move to previous view
         if (currentViewIndex < 0) // if was already showing the first view, go to the last (length of list)
         {
-            currentViewIndex = (views.Length-1);
+            currentViewIndex = ((views.Length - 1));
         }
         views[currentViewIndex].SetActive(true);
     }
