@@ -18,7 +18,7 @@ public class RoomViews : MonoBehaviour
         foreach (GameObject view in views) {
             view.SetActive(false);
         } // set all to inactive
-        currentViewIndex = 0; // always load on room angle 1
+        currentViewIndex = 1; // always load on room angle 2 (index 1, door enrtry view)
         views[currentViewIndex].SetActive(true); // show first angle
     }
 
