@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// author: chelsea houston
+// date last midified: 14/11/23
+
 public class CandleAnimationController : MonoBehaviour
 {
     public Animator animator;

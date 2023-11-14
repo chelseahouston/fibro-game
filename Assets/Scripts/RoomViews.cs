@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // author: chelsea houston
-// date last midified: 04/11/23
+// date last midified: 14/11/23
 
 public class RoomViews : MonoBehaviour
 {
 
     [SerializeField] public GameObject[] views;
     public int currentViewIndex;
+    public CameraMovement camMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-
         foreach (GameObject view in views) {
             view.SetActive(false);
         } // set all to inactive
         currentViewIndex = 1; // always load on room angle 2 (index 1, door enrtry view)
         views[currentViewIndex].SetActive(true); // show first angle
+
+        camMovement.BottomRightIn();
     }
 
     // rotate room to the right

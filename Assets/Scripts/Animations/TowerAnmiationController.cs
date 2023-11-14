@@ -1,5 +1,9 @@
 using UnityEngine;
 
+
+// author: chelsea houston
+// date last midified: 14/11/23
+
 public class TowerAnimationController : MonoBehaviour
 {
     public Animator animator;
