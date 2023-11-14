@@ -5,42 +5,87 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 // author: chelsea houston
-// date last midified: 14/11/23
+// date last modified: 14/11/23
 
 public class CameraMovement : MonoBehaviour
 {
-    public float moveSpeed = 2.0f;
-    public float targetOrthoSize = 5.0f; // Adjust this value according to your scene
+    [SerializeField] private Camera cam;
+    public Transform startMarker;
+    public Transform endMarker;
+    public float speed;
+    private float t; // Time variable
+    private bool isMovingIn, isMovingOut = false;
+    public RoomViews roomViews;
+    public float journeyLength;
 
-    public void BottomRightIn()
+    void Awake()
     {
-        StartCoroutine(MoveCameraInBottomRight());
+        Application.targetFrameRate = 60;
+    }
+    void Start()
+    {
+        speed = 2.0f;
+        Time.timeScale = 1.0f;
+        journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+        Debug.Log("Journey Length: " + journeyLength);
+        Debug.Log("Speed: " + speed);
     }
 
-    IEnumerator MoveCameraInBottomRight()
+    void Update()
+    {
+        if (isMovingIn)
+        {
+            StartCoroutine(MoveCameraIn());
+        }
+        if (isMovingOut)
+        {
+            StartCoroutine(MoveCameraOut());
+        }
+    }
+
+    public void CameraIn()
     {
         Debug.Log("Starting camera movement");
+        t = 0f; // Reset time variable
+        isMovingIn = true;
+    }
 
-        // Get the initial orthographic size of the camera
-        float startOrthoSize = Camera.main.orthographicSize;
+    public void CameraOut()
+    {
+        Debug.Log("Starting camera movement");
+        t = 0f; // Reset time variable
+        isMovingOut = true;
+    }
 
-        float elapsedTime = 0f;
+    IEnumerator MoveCameraIn()
+    {
+        t += Time.deltaTime * speed;
+        cam.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, t);
 
-        while (elapsedTime < 1f)
+        // Check if the movement is complete
+        if (t >= 1.0f)
         {
-            // Lerp between the start and target orthographic sizes
-            Camera.main.orthographicSize = Mathf.Lerp(startOrthoSize, targetOrthoSize, elapsedTime);
-
-            // Increment the elapsed time based on the moveSpeed
-            elapsedTime += Time.deltaTime * moveSpeed;
-
-            yield return null;
+            isMovingIn = false;
+            Debug.Log("Completed camera movement");
+            yield return new WaitForSeconds(0.5f);
+            roomViews.EnableArrows();
         }
+    }
+    IEnumerator MoveCameraOut()
+    {
+        t += Time.deltaTime * speed;
+        cam.transform.position = Vector3.Lerp(endMarker.position, startMarker.position, t);
 
-        // Ensure the camera reaches the exact target orthographic size
-        Camera.main.orthographicSize = targetOrthoSize;
-
-        Debug.Log("Completed camera movement");
+        // Check if the movement is complete
+        if (t >= 1.0f)
+        {
+            yield return new WaitForSeconds(0.5f);
+            isMovingIn = false;
+            Debug.Log("Completed camera movement");
+            
+        }
     }
 }
+
+
 
