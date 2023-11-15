@@ -35,6 +35,7 @@ public class RoomViews : MonoBehaviour
     {
 
         currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log("New Scene = " + currentScene);
 
         // when entering hallway, where did we come from? decides the view of the room
         if (currentScene == "Hallway")
@@ -88,6 +89,7 @@ public class RoomViews : MonoBehaviour
     public void SetPreviousScene() // called from door OnClick methods before the scene change
     {
         previousScene = currentScene;
+        Debug.Log("Previous Scene = " + previousScene);
     }
 
     // rotate room to the right
