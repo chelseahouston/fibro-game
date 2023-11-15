@@ -3003,9 +3003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TO
-
-    HALLWAY'
+  m_text: HALLWAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
   m_sharedMaterial: {fileID: 2675833605748378447, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
@@ -10187,9 +10185,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TO
-
-    HALLWAY'
+  m_text: HALLWAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
   m_sharedMaterial: {fileID: 2675833605748378447, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
