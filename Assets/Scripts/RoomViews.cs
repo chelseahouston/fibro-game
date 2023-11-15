@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // author: chelsea houston
-// date last modified: 14/11/23
+// date last modified: 15/11/23
 
 public class RoomViews : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class RoomViews : MonoBehaviour
     public int currentViewIndex;
     public CameraMovement camMovement;
     public GameObject leftArrow, rightArrow;
+    public string currentScene, previousScene;
 
     private void Awake()
     {
@@ -19,14 +21,70 @@ public class RoomViews : MonoBehaviour
         {
             view.SetActive(false);
         } // set all to inactive
-        currentViewIndex = 1; // always load bedroom on room angle 2 (index 1, door enrtry view) - conditionals needed
-        views[currentViewIndex].SetActive(true); // show first angle
     }
 
     // Start is called before the first frame update
     void Start()
-    { 
+    {
+        LoadRoom();
         camMovement.CameraIn();
+        Debug.Log("Current Scene View = " + currentViewIndex);
+    }
+
+    public void LoadRoom()
+    {
+
+        currentScene = SceneManager.GetActiveScene().name;
+
+        // when entering hallway, where did we come from? decides the view of the room
+        if (currentScene == "Hallway")
+        {
+            switch (previousScene)
+            {
+                case "Bedroom": // when coming from the bedroom to the hallway always load on room angle 1
+                    currentViewIndex = 0; // room angle 1 (index 0, bedroom to hallway entry view)
+                    break;
+
+                case "Bathroom": // when coming from the bathroom to the hallway always load on room angle 1
+                    currentViewIndex = 0; // room angle 1 (index 0, bathroom to hallway entry view)
+                    break;
+
+                case "Kitchen": // when coming from the kitchen to the hallway always load on room angle 1
+                    currentViewIndex = 2; // room angle 3 (index 2, kitchen to hallway entry view)
+                    break;
+
+                case "Lounge": // when coming from the lounge to the hallway always load on room angle 1
+                    currentViewIndex = 2; // room angle 3 (index 2, kitchen to hallway entry view)
+                    break;
+            }
+        }
+
+        if (currentScene == "Bedroom") // when coming from hallway load on room angle 2 (index 1, door enrtry view)
+        {
+            currentViewIndex = 1; 
+        }
+
+        if (currentScene == "Kitchen") // when coming from hallway load on room angle 1 (index 0, door enrtry view)
+        {
+            currentViewIndex = 0;
+        }
+
+        if (currentScene == "Bathroom") // when coming from hallway load on room angle 2 (index 1, door enrtry view)
+        {
+            currentViewIndex = 1;
+        }
+
+        if (currentScene == "Lounge") // when coming from hallway load on room angle 2 (index 1, door enrtry view)
+        {
+            currentViewIndex = 1;
+        }
+
+        views[currentViewIndex].SetActive(true); // show first angle as set above
+    }
+
+    public void SetPreviousScene() // called from door OnClick methods before the scene change
+    {
+        previousScene = currentScene;
     }
 
     // rotate room to the right
@@ -40,9 +98,10 @@ public class RoomViews : MonoBehaviour
         else
         {
             currentViewIndex++; // move to next view
-            Debug.Log("Current Scene View = " + currentViewIndex);
+            
         }
         views[currentViewIndex].SetActive(true);
+        Debug.Log("Current Scene View = " + currentViewIndex);
     }
 
     // rotate room to the left
@@ -55,6 +114,7 @@ public class RoomViews : MonoBehaviour
             currentViewIndex = ((views.Length - 1));
         }
         views[currentViewIndex].SetActive(true);
+        Debug.Log("Current Scene View = " + currentViewIndex);
     }
 
     public void EnableArrows()
@@ -71,11 +131,40 @@ public class RoomViews : MonoBehaviour
 
     public void ExitRoom()
     {
+        SetPreviousScene();
         DisableArrows();
         camMovement.CameraOut();
-
     }
 
+    public void LoadBedroom()
+    {
+        StartCoroutine(LoadScene("Bedroom"));
+    }
 
+    public void LoadHallway()
+    {
+        StartCoroutine(LoadScene("Hallway"));
+    }
+
+    public void LoadKitchen()
+    {
+        StartCoroutine(LoadScene("Kitchen"));
+    }
+
+    public void LoadBathroom()
+    {
+        StartCoroutine(LoadScene("Bathroom"));
+    }
+
+    public void LoadLounge()
+    {
+        StartCoroutine(LoadScene("Lounge"));
+    }
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        yield return new WaitForSeconds(0.5f); // time for the last scene to move out
+        SceneManager.LoadScene(sceneName);
+    }
 
 }
