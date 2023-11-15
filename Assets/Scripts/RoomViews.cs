@@ -56,6 +56,9 @@ public class RoomViews : MonoBehaviour
                 case "Lounge": // when coming from the lounge to the hallway always load on room angle 1
                     currentViewIndex = 2; // room angle 3 (index 2, kitchen to hallway entry view)
                     break;
+                case "": // first load no previous scene
+                    currentViewIndex = 3; // from front door
+                    break;
             }
         }
 
