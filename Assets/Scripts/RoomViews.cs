@@ -41,8 +41,12 @@ public class RoomViews : MonoBehaviour
                 currentViewIndex = 1; // room angle 2 (index 1, door enrtry view)
                 break;
 
-            case ("Hallway", "Bedroom"): // when coming from the bedroom to the hallways always load on room angle 2
-                currentViewIndex = 1; // room angle 2 (index 1, bedroom to hallway entry view)
+            case ("Hallway", "Bedroom"): // when coming from the bedroom to the hallways always load on room angle 1
+                currentViewIndex = 0; // room angle 1 (index 0, bedroom to hallway entry view)
+                break;
+
+            case ("Hallway", "Bathroom"): // when coming from the bathroom to the hallways always load on room angle 1
+                currentViewIndex = 0; // room angle 1 (index 0, bedroom to hallway entry view)
                 break;
 
         }
