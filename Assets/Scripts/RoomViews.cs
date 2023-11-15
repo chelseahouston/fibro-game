@@ -28,6 +28,7 @@ public class RoomViews : MonoBehaviour
     {
         LoadRoom();
         camMovement.CameraIn();
+        Debug.Log("Current Scene View = " + currentViewIndex);
     }
 
     public void LoadRoom()
