@@ -972,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &805045114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86b24e513e0a7814287462f051761455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb993ea6a3dae5f4798ebc4bfec45e8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1346,7 +1346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1200389835
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b5a2215edcefcd42aabc3f25e56e610, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9760bbce95438cc42b7ba3f5132e2744, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1886,7 +1886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1700882931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1926,7 +1926,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b5a2215edcefcd42aabc3f25e56e610, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9760bbce95438cc42b7ba3f5132e2744, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 1710022261}
   - component: {fileID: 1710022262}
   m_Layer: 0
-  m_Name: Bathroom
+  m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2231,7 +2231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86b24e513e0a7814287462f051761455, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb993ea6a3dae5f4798ebc4bfec45e8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
