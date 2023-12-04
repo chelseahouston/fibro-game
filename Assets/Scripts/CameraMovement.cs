@@ -17,6 +17,7 @@ public class CameraMovement : MonoBehaviour
     private bool isMovingIn, isMovingOut = false;
     public RoomViews roomViews;
     public float journeyLength;
+    public UItext UItext;
 
     void Awake()
     {
@@ -55,6 +56,7 @@ public class CameraMovement : MonoBehaviour
         Debug.Log("Starting camera movement");
         t = 0f; // Reset time variable
         isMovingOut = true;
+        UItext.DisableIcons();
     }
 
     IEnumerator MoveCameraIn()
@@ -69,6 +71,7 @@ public class CameraMovement : MonoBehaviour
             Debug.Log("Completed camera movement");
             yield return new WaitForSeconds(0.5f);
             roomViews.EnableArrows();
+            UItext.SetIconsActive();
         }
     }
     IEnumerator MoveCameraOut()
