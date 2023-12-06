@@ -168,8 +168,8 @@ TextureImporter:
       name: bedroomfloortile_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
+        x: 112
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -189,7 +189,7 @@ TextureImporter:
       name: bedroomfloortile_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 80
         width: 16
         height: 16
@@ -210,7 +210,7 @@ TextureImporter:
       name: bedroomfloortile_4
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 80
         width: 16
         height: 16
@@ -231,7 +231,7 @@ TextureImporter:
       name: bedroomfloortile_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 80
         width: 16
         height: 16
@@ -252,8 +252,8 @@ TextureImporter:
       name: bedroomfloortile_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -273,8 +273,8 @@ TextureImporter:
       name: bedroomfloortile_7
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
+        x: 96
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -294,8 +294,8 @@ TextureImporter:
       name: bedroomfloortile_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -315,7 +315,7 @@ TextureImporter:
       name: bedroomfloortile_9
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 64
         width: 16
         height: 16
@@ -336,7 +336,7 @@ TextureImporter:
       name: bedroomfloortile_10
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 64
         width: 16
         height: 16
@@ -357,7 +357,7 @@ TextureImporter:
       name: bedroomfloortile_11
       rect:
         serializedVersion: 2
-        x: 80
+        x: 32
         y: 64
         width: 16
         height: 16
@@ -378,8 +378,8 @@ TextureImporter:
       name: bedroomfloortile_12
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -399,8 +399,8 @@ TextureImporter:
       name: bedroomfloortile_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 64
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -420,8 +420,8 @@ TextureImporter:
       name: bedroomfloortile_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 80
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -441,7 +441,7 @@ TextureImporter:
       name: bedroomfloortile_15
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 48
         width: 16
         height: 16
@@ -462,8 +462,8 @@ TextureImporter:
       name: bedroomfloortile_16
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -483,8 +483,8 @@ TextureImporter:
       name: bedroomfloortile_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -504,8 +504,8 @@ TextureImporter:
       name: bedroomfloortile_18
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 64
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -525,7 +525,7 @@ TextureImporter:
       name: bedroomfloortile_19
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 32
         width: 16
         height: 16
@@ -547,7 +547,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -567,8 +567,8 @@ TextureImporter:
       name: bedroomfloortile_21
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
+        x: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -588,8 +588,8 @@ TextureImporter:
       name: bedroomfloortile_22
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
+        x: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -609,8 +609,8 @@ TextureImporter:
       name: bedroomfloortile_23
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -630,8 +630,8 @@ TextureImporter:
       name: bedroomfloortile_24
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
+        x: 96
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -643,6 +643,69 @@ TextureImporter:
       bones: []
       spriteID: f916f35ec51f5b149a97dfaa6962de75
       internalID: 832083764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedroomfloortile_25
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabc6d250a8455847a648569c24952be
+      internalID: -878382746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedroomfloortile_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c898cab60e8454784b8dbcd2ca268d
+      internalID: -1721315961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bedroomfloortile_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b798bb8e17935264d8532102ef6fa932
+      internalID: -1680597055
       vertices: []
       indices: 
       edges: []
@@ -676,6 +739,9 @@ TextureImporter:
       bedroomfloortile_22: 1209379204
       bedroomfloortile_23: 1926467229
       bedroomfloortile_24: 832083764
+      bedroomfloortile_25: -878382746
+      bedroomfloortile_26: -1721315961
+      bedroomfloortile_27: -1680597055
       bedroomfloortile_3: -1010861844
       bedroomfloortile_4: 666752530
       bedroomfloortile_5: -1421700834
