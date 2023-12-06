@@ -525,8 +525,8 @@ TextureImporter:
       name: woodenfloormap_19
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 80
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -546,8 +546,8 @@ TextureImporter:
       name: woodenfloormap_20
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 96
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -567,7 +567,7 @@ TextureImporter:
       name: woodenfloormap_21
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
         y: 32
         width: 16
         height: 16
@@ -588,7 +588,7 @@ TextureImporter:
       name: woodenfloormap_22
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 32
         width: 16
         height: 16
@@ -609,8 +609,8 @@ TextureImporter:
       name: woodenfloormap_23
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -630,8 +630,8 @@ TextureImporter:
       name: woodenfloormap_24
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
+        x: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -651,8 +651,8 @@ TextureImporter:
       name: woodenfloormap_25
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
+        x: 80
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -673,7 +673,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -693,8 +693,8 @@ TextureImporter:
       name: woodenfloormap_27
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -706,6 +706,174 @@ TextureImporter:
       bones: []
       spriteID: b5ef764fb75d17f42bbdfe7896ea85b3
       internalID: -853342969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_28
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54aaef4b1425ab74184958fa8067f11c
+      internalID: 1447072581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83f54f123c633d479614f51fac9416f
+      internalID: -430574201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_30
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cec27ae4b8cddc4fa525d6e4e27dba6
+      internalID: 113459768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484e3992b3cb82f4cae5d322ef4c591f
+      internalID: -2067246115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c87bdca62b99645b623df45bef84e6
+      internalID: -302988075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f1e82575835ee4f814e66f1a79e4bb
+      internalID: -1894376270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df1f06cf0d787458b23350789c52e9
+      internalID: -561380618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woodenfloormap_35
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee664333f74ef5c49a57eaa6d358fc81
+      internalID: 682574193
       vertices: []
       indices: 
       edges: []
@@ -742,7 +910,15 @@ TextureImporter:
       woodenfloormap_25: 1966892003
       woodenfloormap_26: -1985358565
       woodenfloormap_27: -853342969
+      woodenfloormap_28: 1447072581
+      woodenfloormap_29: -430574201
       woodenfloormap_3: 1320928955
+      woodenfloormap_30: 113459768
+      woodenfloormap_31: -2067246115
+      woodenfloormap_32: -302988075
+      woodenfloormap_33: -1894376270
+      woodenfloormap_34: -561380618
+      woodenfloormap_35: 682574193
       woodenfloormap_4: -854037810
       woodenfloormap_5: 815186956
       woodenfloormap_6: -424220125
