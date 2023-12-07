@@ -46,3 +46,6 @@ TagManager:
   - name: Room
     uniqueID: 1319924923
     locked: 0
+  - name: Furniture
+    uniqueID: 1034058887
+    locked: 0
