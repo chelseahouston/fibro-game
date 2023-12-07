@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38f4957e254a75f4c8108ed7f8dca40d
+guid: 1d81139e2d6a6c948991d10fa32c9a60
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: armchair_0
+      name: tv_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f32caba5d554e74d9b97ccfaa2101f2
-      internalID: -34520581
+      spriteID: 21cd3518c72e342498b07cf5f379df40
+      internalID: -312644972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: armchair_1
+      name: tv_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61ab6826fc56e444bac3c3d1e7db784
+      internalID: 1159403642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_2
       rect:
         serializedVersion: 2
         x: 0
@@ -158,8 +179,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 819cf38dc97975a4ca12b7e0b54a836f
-      internalID: 1550363331
+      spriteID: f14cffd7b3c495c4791e32e99178baae
+      internalID: -470075766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tv_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367cb918e668fe142ad08a2a3b8d40a0
+      internalID: -619430472
       vertices: []
       indices: 
       edges: []
@@ -175,8 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      armchair_0: -34520581
-      armchair_1: 1550363331
+      tv_0: -312644972
+      tv_1: 1159403642
+      tv_2: -470075766
+      tv_3: -619430472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
