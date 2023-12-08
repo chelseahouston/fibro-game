@@ -5,7 +5,7 @@ using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 // author: chelsea houston
-// date last modified: 14/11/23
+// date last modified: 08/12/23
 
 public class CameraMovement : MonoBehaviour
 {
@@ -15,7 +15,6 @@ public class CameraMovement : MonoBehaviour
     public float speed;
     private float t; // Time variable
     private bool isMovingIn, isMovingOut = false;
-    public RoomViews roomViews;
     public float journeyLength;
     public UItext UItext;
 
@@ -70,7 +69,6 @@ public class CameraMovement : MonoBehaviour
             isMovingIn = false;
             Debug.Log("Completed camera movement");
             yield return new WaitForSeconds(0.5f);
-            roomViews.EnableArrows();
             UItext.SetIconsActive();
         }
     }
