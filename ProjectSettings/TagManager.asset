@@ -49,6 +49,9 @@ TagManager:
   - name: RugsMiddleLayer
     uniqueID: 2822882489
     locked: 0
+  - name: Wall
+    uniqueID: 3463557517
+    locked: 0
   - name: Furniture
     uniqueID: 1034058887
     locked: 0
