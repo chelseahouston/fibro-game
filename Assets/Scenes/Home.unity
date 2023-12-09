@@ -1528,7 +1528,6 @@ GameObject:
   - component: {fileID: 533385249}
   - component: {fileID: 533385252}
   - component: {fileID: 533385251}
-  - component: {fileID: 533385250}
   m_Layer: 0
   m_Name: BathroomWalls
   m_TagString: Untagged
@@ -1551,51 +1550,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1516509399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &533385250
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533385248}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!61 &533385251
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2556,7 +2510,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 17.5
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -6682,6 +6636,7 @@ GameObject:
   - component: {fileID: 1735572654}
   - component: {fileID: 1735572655}
   - component: {fileID: 1735572656}
+  - component: {fileID: 1735572657}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6750,7 +6705,7 @@ Transform:
   m_GameObject: {fileID: 1735572651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.94, y: -16.66, z: 0}
+  m_LocalPosition: {x: -28.46, y: -26.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6831,6 +6786,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.7}
   m_Size: {x: 0.6, y: 0.6}
   m_Direction: 0
+--- !u!95 &1735572657
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735572651}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 434e6bd6ac29a4c4697cb9d3e27afce0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2009783234
 GameObject:
   m_ObjectHideFlags: 0
@@ -7558,7 +7534,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 100
+      m_AnimationSpeed: 1.7466221
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

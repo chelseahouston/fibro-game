@@ -4,10 +4,13 @@ public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 3f;
     private Rigidbody2D rb;
+    private Animator animator;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -19,5 +22,11 @@ public class CharacterMovement : MonoBehaviour
         movement.Normalize();
 
         rb.velocity = movement * moveSpeed;
+
+        animator.SetFloat("Vertical", verticalInput);
+        animator.SetFloat("Horizontal", horizontalInput);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
     }
 }
