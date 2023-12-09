@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: LavaLamp
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1577767046, guid: 5d0840c4a1bb67e44b69a3134b5886b5, type: 3}
+  - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
+  - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
+  - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 1
+  m_TileAnimationFlags: 0
