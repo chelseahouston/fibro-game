@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset = new Vector3(0f, 0f, -40f);
     public float edgeThreshold = 0.1f;
 
-    void LateUpdate()
+    void Update()
     {
         if (target == null)
         {
