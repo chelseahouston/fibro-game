@@ -6,6 +6,17 @@ TagManager:
   tags:
   - UItext
   - UIicon
+  - TV
+  - User
+  - Bath
+  - Toilet
+  - Bed
+  - Stove
+  - Fridge
+  - Armchair
+  - Sofa
+  - Fire
+  - Desk
   layers:
   - Default
   - TransparentFX
@@ -58,7 +69,7 @@ TagManager:
   - name: Furniture
     uniqueID: 1034058887
     locked: 0
-  - name: Player
+  - name: PlayerLayer
     uniqueID: 2623811593
     locked: 0
   - name: BottomFurniture
