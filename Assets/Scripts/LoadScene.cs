@@ -10,13 +10,14 @@ public class LoadScene : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D thing)
     {
         sceneName = SceneManager.GetActiveScene().name;
+        Debug.Log("Scene = "+ sceneName);
 
         if (sceneName == "Home" & thing.tag == "HomeDoor") // if front door but inside house, go outside
         {
             SceneManager.LoadScene("Outside");
         }
 
-        if (sceneName == "Outside" & thing.tag == "HomeDoor") // if front door but outside house, go intside
+        if (sceneName == "Outside" & thing.tag == "HomeDoor") // if front door but outside house, go inside
         {
             SceneManager.LoadScene("Home");
         }
