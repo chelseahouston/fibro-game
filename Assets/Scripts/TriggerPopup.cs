@@ -21,9 +21,14 @@ public class TriggerPopup : MonoBehaviour
     {
         actionlist.Add("TV", "Watch TV");
         actionlist.Add("Bed", "Sleep");
-        actionlist.Add("Fridge", "Cook Food");
+        actionlist.Add("Fridge", "Get Snack");
+        actionlist.Add("Stove", "Cook Food");
         actionlist.Add("Sofa", "Sit");
-        actionlist.Add("ArmChair", "Sit");
+        actionlist.Add("Armchair", "Sit");
+        actionlist.Add("Bath", "Take Bath");
+        actionlist.Add("Toilet", "Use Toilet");
+        actionlist.Add("Fire", "Light Fire");
+        actionlist.Add("Desk", "Work/ Study");
     }
 
 
