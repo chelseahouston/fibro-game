@@ -18,6 +18,9 @@ TagManager:
   - Fire
   - Desk
   - HomeDoor
+  - ShopDoor
+  - MedicalDoor
+  - CommDoor
   layers:
   - Default
   - TransparentFX
