@@ -149,27 +149,21 @@ public class Player : MonoBehaviour
 
     IEnumerator LoadSceneAndSetPosition(string scene, Vector3 position)
     {
-        Debug.Log("Loading " + scene);
 
-        // Disable the renderer and collider components if needed
-        // (replace "Renderer" and "Collider" with the actual components you want to disable)
+        // disable the player's renderer component
         Renderer rendererComponent = GetComponent<Renderer>();
         rendererComponent.enabled = false;
 
-        // Load the scene
         SceneManager.LoadScene(scene);
 
-        // Wait for the end of the frame
         yield return new WaitForEndOfFrame();
 
-        // Set the player position
+        // set the player position depending on the scene
         transform.position = position;
 
-        // Enable the renderer and collider components if needed
+        // enable the renderer and collider component
         rendererComponent.enabled = true;;
 
-        Debug.Log("Loaded " + scene);
-        Debug.Log("Player position: " + transform.position);
     }
 
 }
