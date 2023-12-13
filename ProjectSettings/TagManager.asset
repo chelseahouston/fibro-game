@@ -58,24 +58,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Room
+  - name: 1
     uniqueID: 1319924923
     locked: 0
-  - name: Wall
+  - name: 2
     uniqueID: 3463557517
     locked: 0
-  - name: CeilingLamp
+  - name: 3
     uniqueID: 1753362101
     locked: 0
-  - name: RugsMiddleLayer
+  - name: 4
     uniqueID: 2822882489
     locked: 0
-  - name: Furniture
+  - name: 5
     uniqueID: 1034058887
     locked: 0
-  - name: PlayerLayer
+  - name: 6
     uniqueID: 2623811593
     locked: 0
-  - name: BottomFurniture
+  - name: 7
     uniqueID: 357509677
+    locked: 0
+  - name: 8
+    uniqueID: 26330305
     locked: 0
