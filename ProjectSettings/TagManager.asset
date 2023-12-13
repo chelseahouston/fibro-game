@@ -79,3 +79,6 @@ TagManager:
   - name: 7
     uniqueID: 357509677
     locked: 0
+  - name: 8
+    uniqueID: 26330305
+    locked: 0

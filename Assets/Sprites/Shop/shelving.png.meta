@@ -630,7 +630,7 @@ TextureImporter:
       name: shelving_24
       rect:
         serializedVersion: 2
-        x: 0
+        x: 16
         y: 32
         width: 16
         height: 16
@@ -651,7 +651,7 @@ TextureImporter:
       name: shelving_25
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 32
         width: 16
         height: 16
@@ -672,7 +672,7 @@ TextureImporter:
       name: shelving_26
       rect:
         serializedVersion: 2
-        x: 32
+        x: 48
         y: 32
         width: 16
         height: 16
@@ -693,7 +693,7 @@ TextureImporter:
       name: shelving_27
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 32
         width: 16
         height: 16
@@ -714,7 +714,7 @@ TextureImporter:
       name: shelving_28
       rect:
         serializedVersion: 2
-        x: 64
+        x: 80
         y: 32
         width: 16
         height: 16
@@ -735,7 +735,7 @@ TextureImporter:
       name: shelving_29
       rect:
         serializedVersion: 2
-        x: 80
+        x: 96
         y: 32
         width: 16
         height: 16
@@ -756,7 +756,7 @@ TextureImporter:
       name: shelving_30
       rect:
         serializedVersion: 2
-        x: 96
+        x: 112
         y: 32
         width: 16
         height: 16
@@ -777,7 +777,7 @@ TextureImporter:
       name: shelving_31
       rect:
         serializedVersion: 2
-        x: 112
+        x: 128
         y: 32
         width: 16
         height: 16
@@ -798,8 +798,8 @@ TextureImporter:
       name: shelving_32
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
+        x: 16
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -819,7 +819,7 @@ TextureImporter:
       name: shelving_33
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 16
         width: 16
         height: 16
@@ -840,7 +840,7 @@ TextureImporter:
       name: shelving_34
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 16
         width: 16
         height: 16
@@ -861,7 +861,7 @@ TextureImporter:
       name: shelving_35
       rect:
         serializedVersion: 2
-        x: 32
+        x: 64
         y: 16
         width: 16
         height: 16
@@ -882,7 +882,7 @@ TextureImporter:
       name: shelving_36
       rect:
         serializedVersion: 2
-        x: 48
+        x: 80
         y: 16
         width: 16
         height: 16
@@ -903,7 +903,7 @@ TextureImporter:
       name: shelving_37
       rect:
         serializedVersion: 2
-        x: 64
+        x: 96
         y: 16
         width: 16
         height: 16
@@ -924,7 +924,7 @@ TextureImporter:
       name: shelving_38
       rect:
         serializedVersion: 2
-        x: 80
+        x: 112
         y: 16
         width: 16
         height: 16
@@ -945,7 +945,7 @@ TextureImporter:
       name: shelving_39
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 16
         width: 16
         height: 16
@@ -966,8 +966,8 @@ TextureImporter:
       name: shelving_40
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -987,8 +987,8 @@ TextureImporter:
       name: shelving_41
       rect:
         serializedVersion: 2
-        x: 128
-        y: 16
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -1008,7 +1008,7 @@ TextureImporter:
       name: shelving_42
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 0
         width: 16
         height: 16
@@ -1029,7 +1029,7 @@ TextureImporter:
       name: shelving_43
       rect:
         serializedVersion: 2
-        x: 16
+        x: 64
         y: 0
         width: 16
         height: 16
@@ -1050,69 +1050,6 @@ TextureImporter:
       name: shelving_44
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d48610b7580b96f4f8a3a8a61fc1b57c
-      internalID: 1390454950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shelving_45
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: feebd02940827734fa26bd3bdf54d8e6
-      internalID: -1407313991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shelving_46
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adab8eb9aa1d38a4bbcf13911b903329
-      internalID: -893811786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shelving_47
-      rect:
-        serializedVersion: 2
         x: 80
         y: 0
         width: 16
@@ -1124,14 +1061,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee3deb4f86deff1448cde636210555c0
-      internalID: -1195260312
+      spriteID: 3722dc29e929b0a49824e81067b6ab2e
+      internalID: -1186473094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shelving_48
+      name: shelving_45
       rect:
         serializedVersion: 2
         x: 96
@@ -1145,14 +1082,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e6118242baae6e429036acd44249883
-      internalID: 1793719560
+      spriteID: d3ca93a10d0d9ff459159d4ffc4fbed7
+      internalID: 1325500143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shelving_49
+      name: shelving_46
       rect:
         serializedVersion: 2
         x: 112
@@ -1166,14 +1103,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4937a5d13ff3fb849b40adcd7b6c7385
-      internalID: -1046369731
+      spriteID: a30d091bd88e8694ab3e3a20947c6b76
+      internalID: 34192508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shelving_50
+      name: shelving_47
       rect:
         serializedVersion: 2
         x: 128
@@ -1187,8 +1124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05d0526d1dd571c438e9fb86ee29eeaf
-      internalID: 980150936
+      spriteID: 9d1ad12712e65884396589ce6911f8ee
+      internalID: -492770803
       vertices: []
       indices: 
       edges: []
@@ -1243,14 +1180,11 @@ TextureImporter:
       shelving_41: -313226430
       shelving_42: -471167636
       shelving_43: 2089891116
-      shelving_44: 1390454950
-      shelving_45: -1407313991
-      shelving_46: -893811786
-      shelving_47: -1195260312
-      shelving_48: 1793719560
-      shelving_49: -1046369731
+      shelving_44: -1186473094
+      shelving_45: 1325500143
+      shelving_46: 34192508
+      shelving_47: -492770803
       shelving_5: 652409889
-      shelving_50: 980150936
       shelving_6: -796770348
       shelving_7: -1326319426
       shelving_8: 805573946
