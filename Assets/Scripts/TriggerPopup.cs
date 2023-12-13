@@ -62,7 +62,7 @@ public class TriggerPopup : MonoBehaviour
     {
         actionlist.Add("Milk", "Get Milk");
         actionlist.Add("Bread", "Get Bread");
-        actionlist.Add("Fridge", "Get Snacks");
+        actionlist.Add("Pasta", "Get Pasta");
         actionlist.Add("Veg", "Get Veg");
         actionlist.Add("Bench", "Sit");
         actionlist.Add("Cashier", "Pay for Groceries");
