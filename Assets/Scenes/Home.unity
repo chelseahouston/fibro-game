@@ -2117,7 +2117,6 @@ Transform:
   - {fileID: 1284492728}
   - {fileID: 1080931026}
   - {fileID: 1407898974}
-  - {fileID: 1735572653}
   m_Father: {fileID: 512190226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922157885
@@ -7821,7 +7820,6 @@ GameObject:
   - component: {fileID: 1735572656}
   - component: {fileID: 1735572659}
   - component: {fileID: 1735572657}
-  - component: {fileID: 1735572660}
   - component: {fileID: 1735572658}
   m_Layer: 0
   m_Name: Player
@@ -7891,12 +7889,12 @@ Transform:
   m_GameObject: {fileID: 1735572651}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.45996, y: -26.63, z: 0}
+  m_LocalPosition: {x: -28.45996, y: -26.859985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 383555940}
-  m_Father: {fileID: 890659977}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1735572654
 MonoBehaviour:
@@ -7911,6 +7909,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  homePosition: {x: 0, y: 0, z: 0}
+  shopPosition: {x: 0, y: 0, z: 0}
+  commPosition: {x: 0, y: 0, z: 0}
+  medPosition: {x: 0, y: 0, z: 0}
+  outsideHomePos: {x: 0, y: 0, z: 0}
+  outsideShopPos: {x: 0, y: 0, z: 0}
+  outsideCommPosition: {x: 0, y: 0, z: 0}
+  outsideMedPos: {x: 0, y: 0, z: 0}
+  sceneName: 
 --- !u!50 &1735572655
 Rigidbody2D:
   serializedVersion: 4
@@ -7970,8 +7977,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_Size: {x: 1, y: 1.5}
+  m_Offset: {x: 0, y: -0.33124888}
+  m_Size: {x: 1, y: 1.2375023}
   m_Direction: 0
 --- !u!95 &1735572657
 Animator:
@@ -8043,18 +8050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupText: {fileID: 212801133}
   popup: {fileID: 383555939}
---- !u!114 &1735572660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735572651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 757472db859bd5447b269ca5104d97e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   sceneName: 
 --- !u!1 &1867166241
 GameObject:
@@ -8988,7 +8983,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 2.452523
+      m_AnimationSpeed: 3.1546195
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -9690,3 +9685,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 490083148}
   - {fileID: 512190226}
+  - {fileID: 1735572653}
