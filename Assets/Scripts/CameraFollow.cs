@@ -10,13 +10,14 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("Player");
+        LocatePlayer();
     }
     void Update()
     {
         if (target == null)
         {
-            Debug.LogWarning("Camera target is not assigned.");
+            Debug.LogWarning("Camera target is not assigned. Locating Player...");
+            LocatePlayer();
             return;
         }
 
@@ -32,6 +33,12 @@ public class CameraFollow : MonoBehaviour
         transform.position = smoothedPosition;
 
         CheckEdgeMovement();
+    }
+
+   
+    private void LocatePlayer()
+    {
+        target = GameObject.Find("Player");
     }
 
     void CheckEdgeMovement()

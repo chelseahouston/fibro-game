@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     private void SetStartingPositions()
     {
         // set starting positions
-        homePosition = new Vector3(-28.46f, -27.86f, 0f);
+        homePosition = new Vector3(-28.46f, -27.1f, 0f);
         shopPosition = new Vector3(-23.54f, -26.81f, 0f);
         commPosition = new Vector3(-23.54f, -17.34f, 0f);
         medPosition = new Vector3(-31.5f, -25.87f, 0f);
@@ -149,13 +149,27 @@ public class Player : MonoBehaviour
 
     IEnumerator LoadSceneAndSetPosition(string scene, Vector3 position)
     {
-        Debug.Log("Called ");
-        SceneManager.LoadScene(scene);
         Debug.Log("Loading " + scene);
+
+        // Disable the renderer and collider components if needed
+        // (replace "Renderer" and "Collider" with the actual components you want to disable)
+        Renderer rendererComponent = GetComponent<Renderer>();
+        rendererComponent.enabled = false;
+
+        // Load the scene
+        SceneManager.LoadScene(scene);
+
+        // Wait for the end of the frame
+        yield return new WaitForEndOfFrame();
+
+        // Set the player position
         transform.position = position;
-        yield return new WaitForSeconds(1f); // Wait for the next frame
+
+        // Enable the renderer and collider components if needed
+        rendererComponent.enabled = true;;
+
         Debug.Log("Loaded " + scene);
         Debug.Log("Player position: " + transform.position);
-
     }
+
 }
