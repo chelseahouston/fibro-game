@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 3f;
     private Rigidbody2D rb;
     private Animator animator;
-    public Vector3 homePosition, shopPosition, commPosition, medPosition; // player's inside positions
+    public Vector3 homePosition, shopPosition, commPosition, medPosition, gameLoadPos; // player's inside positions
     public Vector3 outsideHomePos, outsideShopPos, outsideCommPosition, outsideMedPos; // player's outside positions
     public string sceneName;
 
@@ -31,20 +31,21 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SetStartingPositions();
-        LoadSceneAndSetPosition("Home", homePosition);
+        LoadSceneAndSetPosition("Home", gameLoadPos); // load out of bed
     }
 
     private void SetStartingPositions()
     {
         // set starting positions
-        homePosition = new Vector3(-28.46f, -27.1f, 0f);
-        shopPosition = new Vector3(-23.54f, -26.81f, 0f);
-        commPosition = new Vector3(-23.54f, -17.34f, 0f);
-        medPosition = new Vector3(-31.5f, -25.87f, 0f);
-        outsideHomePos = new Vector3(-28.46f, -26.76f, 0f);
-        outsideShopPos = new Vector3(-15.46f, -35f, 0f);
-        outsideCommPosition = new Vector3(14.58f, -20.52f, 0f);
-        outsideMedPos = new Vector3(-8.5f, -14.56f, 0f);
+        gameLoadPos = new Vector3(-21.5f, -15f, 0f);
+        homePosition = new Vector3(-28.476f, -27.456f, 0f);
+        shopPosition = new Vector3(-23.48f, -27.58f, 0f);
+        commPosition = new Vector3(-22.05f, -24.82f, 0f);
+        medPosition = new Vector3(-31.45f, -26.5f, 0f);
+        outsideHomePos = new Vector3(-28.476f, -26.572f, 0f);
+        outsideShopPos = new Vector3(-15.53f, -34.59f, 0f);
+        outsideCommPosition = new Vector3(14.40f, -19.6f, 0f);
+        outsideMedPos = new Vector3(-8.55f, -13.57f, 0f);
     }
 
     void Update()
