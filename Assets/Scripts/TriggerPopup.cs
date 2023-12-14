@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TriggerPopup : MonoBehaviour
 {
-    // Dictionary to store tag-text mappings
-    private Dictionary<string, string> actionlist = new Dictionary<string, string>();
-    public TextMeshProUGUI popupText;
     public GameObject popup;
-    public string sceneName;
 
     // Initialize the dictionary in Start or Awake method
     void Start()
