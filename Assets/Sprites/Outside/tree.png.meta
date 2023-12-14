@@ -126,8 +126,8 @@ TextureImporter:
       name: tree_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
+        x: 0
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -147,8 +147,8 @@ TextureImporter:
       name: tree_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 16
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -168,7 +168,7 @@ TextureImporter:
       name: tree_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 80
         width: 16
         height: 16
@@ -189,7 +189,7 @@ TextureImporter:
       name: tree_3
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 80
         width: 16
         height: 16
@@ -210,8 +210,8 @@ TextureImporter:
       name: tree_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
+        x: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -231,8 +231,8 @@ TextureImporter:
       name: tree_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 16
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -252,7 +252,7 @@ TextureImporter:
       name: tree_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 64
         width: 16
         height: 16
@@ -273,7 +273,7 @@ TextureImporter:
       name: tree_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 64
         width: 16
         height: 16
@@ -294,8 +294,8 @@ TextureImporter:
       name: tree_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -315,8 +315,8 @@ TextureImporter:
       name: tree_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
+        x: 16
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -336,7 +336,7 @@ TextureImporter:
       name: tree_10
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 48
         width: 16
         height: 16
@@ -357,7 +357,7 @@ TextureImporter:
       name: tree_11
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 48
         width: 16
         height: 16
@@ -378,8 +378,8 @@ TextureImporter:
       name: tree_12
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -399,8 +399,8 @@ TextureImporter:
       name: tree_13
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -420,7 +420,7 @@ TextureImporter:
       name: tree_14
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 32
         width: 16
         height: 16
@@ -441,8 +441,8 @@ TextureImporter:
       name: tree_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 16
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -462,7 +462,7 @@ TextureImporter:
       name: tree_16
       rect:
         serializedVersion: 2
-        x: 16
+        x: 32
         y: 16
         width: 16
         height: 16
@@ -483,8 +483,8 @@ TextureImporter:
       name: tree_17
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -542,6 +542,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tree_20
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72aa3d2fc80e925419576778fc0eaeea
+      internalID: -2002805219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -566,6 +587,7 @@ TextureImporter:
       tree_18: 396263475
       tree_19: 1636328607
       tree_2: 1936288996
+      tree_20: -2002805219
       tree_3: -2125400571
       tree_4: 1425573217
       tree_5: 1438974860
