@@ -53,7 +53,7 @@ public class TaskManager : MonoBehaviour
         {
             int randomKey = Random.Range(1, tasklist.Count + 1);
             taskTexts[i].text = tasklist[randomKey];
-            tasklist.Remove(randomKey);
+            // tasklist.Remove(randomKey);
         }
     }
 
