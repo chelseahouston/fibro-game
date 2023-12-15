@@ -33,16 +33,17 @@ public class TaskManager : MonoBehaviour
         tasklist.Add(7, "Go to sleep before 10pm");
         tasklist.Add(8, "Watch TV");
         tasklist.Add(9, "Wash the dishes");
-        tasklist.Add(11, "Spend time with your pet");
-        tasklist.Add(12, "Take your meds");
-        tasklist.Add(13, "Brush your teeth");
-        tasklist.Add(14, "Vaccuum");
-        tasklist.Add(15, "Play Video Games");
-        tasklist.Add(16, "Read a book");
-        tasklist.Add(17, "Feed your pet");
-        tasklist.Add(18, "Buy Groceries");
-        tasklist.Add(19, "Study for 3 hours total");
-        tasklist.Add(20, "Meditate in the Park");
+        tasklist.Add(10, "Spend time with your pet");
+        tasklist.Add(11, "Take your meds");
+        tasklist.Add(12, "Brush your teeth");
+        tasklist.Add(13, "Vaccuum");
+        tasklist.Add(14, "Play Video Games");
+        tasklist.Add(15, "Read a book");
+        tasklist.Add(16, "Feed your pet");
+        tasklist.Add(17, "Buy Groceries");
+        tasklist.Add(18, "Study for 3 hours total");
+        tasklist.Add(19, "Meditate Outside");
+        tasklist.Add(20, "Go to the Cinema");
     }
 
     public void AssignTasks()
