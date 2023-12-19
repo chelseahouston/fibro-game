@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NeedsManager : MonoBehaviour
 {
@@ -13,7 +14,10 @@ public class NeedsManager : MonoBehaviour
 
     void Start()
     {
-        InitializeNeeds();
+        if (SceneManager.GetActiveScene().name == "Home") // placeholder for first playthrough for now
+        {
+            InitializeNeeds();
+        }
     }
 
     public void Update()
@@ -41,8 +45,22 @@ public class NeedsManager : MonoBehaviour
         needsList.Add(new Need("Brain Fog", 0, 100, 5, 110, needsBars[7]));
         needsList.Add(new Need("Social", 0, 110, 5, 110, needsBars[8]));
         needsList.Add(new Need("Happiness", 0, 110, 5, 110, needsBars[9]));
+        ResetNeeds();
     }
 
+
+    public void ResetNeeds()
+    {
+        int i = 0; // first in array to iterate through needs
+        foreach (Need need in needsList)
+        {
+
+            BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
+            thisBar.SetValue(need.minLevel); // set as new current value
+            i++; // continue iteration
+        }
+
+    }
     public void DecreaseNeeds()
     {
         int i = 0; // first in array to iterate through needs
@@ -51,7 +69,7 @@ public class NeedsManager : MonoBehaviour
 
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             float currentValue = thisBar.CurrentValue; // get and store the current value
-            float newValue = currentValue - need.decreaseRate; // new value is current minus this need's decreasing value
+            float newValue = currentValue + need.decreaseRate; // new value is current plus this need's decreasing value
             if (newValue < need.minLevel) {
                 newValue = need.minLevel;
                     }
@@ -73,7 +91,7 @@ public class NeedsManager : MonoBehaviour
             Debug.Log("Increasing " + need.name);
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             float currentValue = thisBar.CurrentValue; // get and store the current value
-            float newValue = currentValue + need.increaseRate; // new value is current plus this need's increasing value
+            float newValue = currentValue - need.increaseRate; // new value is current minus this need's increasing value
             if (newValue > need.maxLevel)
             {
                 newValue = need.maxLevel;

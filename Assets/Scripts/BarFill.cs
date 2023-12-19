@@ -12,7 +12,6 @@ public class BarFill : MonoBehaviour
     void Start()
     {
         maxValue = 110; // (11 blocks in the bar, 10 value each)
-        CurrentValue = maxValue;
         fill.fillAmount = 1;
     }
 
@@ -21,4 +20,6 @@ public class BarFill : MonoBehaviour
         CurrentValue = Mathf.Clamp(value, 0, maxValue);
         fill.fillAmount = CurrentValue / maxValue;
     }
+
+
 }
