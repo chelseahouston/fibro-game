@@ -4092,6 +4092,7 @@ GameObject:
   - component: {fileID: 593975359}
   - component: {fileID: 593975361}
   - component: {fileID: 593975360}
+  - component: {fileID: 593975362}
   m_Layer: 5
   m_Name: NeedsPanel
   m_TagString: Untagged
@@ -4166,6 +4167,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593975358}
   m_CullTransparentMesh: 1
+--- !u!114 &593975362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593975358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a70a4ad7f1b6f4e890c1661948cb80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needsList: []
+  needsBars:
+  - {fileID: 1859048035}
+  - {fileID: 817418994}
+  - {fileID: 540731951}
+  - {fileID: 693143397}
+  - {fileID: 1263427076}
+  - {fileID: 1369326194}
+  - {fileID: 1183306467}
+  - {fileID: 1448563108}
+  - {fileID: 1844865501}
+  - {fileID: 1601218518}
 --- !u!1 &602997497
 GameObject:
   m_ObjectHideFlags: 0
@@ -17203,7 +17228,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 2.2704074
+      m_AnimationSpeed: 2.180669
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

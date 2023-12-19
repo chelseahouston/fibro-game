@@ -1,47 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BarFill : MonoBehaviour
 {
-    public int maxValue;
+    public float maxValue;
     public Image fill;
-    private int currentValue;
+
+    public float CurrentValue { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        currentValue = maxValue;
+        maxValue = 110; // (11 blocks in the bar, 10 value each)
+        CurrentValue = maxValue;
         fill.fillAmount = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetValue(float value)
     {
-
+        CurrentValue = Mathf.Clamp(value, 0, maxValue);
+        fill.fillAmount = CurrentValue / maxValue;
     }
-
-    public void Add(int value)
-    {
-        currentValue += value;
-        if (currentValue >= maxValue)
-        {
-            currentValue = maxValue;
-        }
-
-        fill.fillAmount = (float)currentValue/maxValue;
-    }
-
-    public void Deduct(int value)
-    {
-        currentValue -= value;
-        if (currentValue <= 0)
-        {
-            currentValue = 0;
-        }
-
-        fill.fillAmount = (float)currentValue / maxValue;
-    }
-
 }
