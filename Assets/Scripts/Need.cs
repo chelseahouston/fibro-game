@@ -8,6 +8,8 @@ public class Need
     public float maxLevel;
     public float decreaseRate;
     public float increaseRate;
+    public GameObject bar;
+    public float currentValue;
 
     public Need(string name, float minLevel, float maxLevel, float decreaseRate, float increaseRate, GameObject bar)
     {
@@ -16,5 +18,6 @@ public class Need
         this.maxLevel = maxLevel;
         this.decreaseRate = decreaseRate;
         this.increaseRate = increaseRate;
+        this.bar = bar;
     }
 }

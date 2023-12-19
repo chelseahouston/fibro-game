@@ -48,6 +48,7 @@ public class NeedsManager : MonoBehaviour
         int i = 0; // first in array to iterate through needs
         foreach (Need need in needsList)
         {
+
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             float currentValue = thisBar.CurrentValue; // get and store the current value
             float newValue = currentValue - need.decreaseRate; // new value is current minus this need's decreasing value
