@@ -56,7 +56,7 @@ public class NeedsManager : MonoBehaviour
         {
 
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
-            thisBar.SetValue(need.minLevel); // set as new current value
+            thisBar.SetValue(need.maxLevel); // set as new current value
             i++; // continue iteration
         }
 
@@ -69,7 +69,7 @@ public class NeedsManager : MonoBehaviour
 
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             float currentValue = thisBar.CurrentValue; // get and store the current value
-            float newValue = currentValue + need.decreaseRate; // new value is current plus this need's decreasing value
+            float newValue = currentValue - need.decreaseRate; // new value is current minus this need's decreasing value
             if (newValue < need.minLevel) {
                 newValue = need.minLevel;
                     }
@@ -91,7 +91,7 @@ public class NeedsManager : MonoBehaviour
             Debug.Log("Increasing " + need.name);
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             float currentValue = thisBar.CurrentValue; // get and store the current value
-            float newValue = currentValue - need.increaseRate; // new value is current minus this need's increasing value
+            float newValue = currentValue + need.increaseRate; // new value is current plus this need's increasing value
             if (newValue > need.maxLevel)
             {
                 newValue = need.maxLevel;
