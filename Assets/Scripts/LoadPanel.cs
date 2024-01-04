@@ -7,6 +7,7 @@ public class LoadPanel : MonoBehaviour
     public GameObject needsPanel;
     public GameObject tasksPanel;
     public GameObject calendarPanel;
+    public NeedsManager needsManager;
 
 
     private void Start() 
@@ -19,10 +20,6 @@ public class LoadPanel : MonoBehaviour
 
     public void ShowTasks()
     {
-        if (needsPanel.activeSelf)
-        {
-            needsPanel.SetActive(false);
-        }
         tasksPanel.SetActive(true);
     }
 
@@ -33,12 +30,8 @@ public class LoadPanel : MonoBehaviour
 
     public void ShowNeeds()
     {
-        if (tasksPanel.activeSelf)
-        {
-            tasksPanel.SetActive(false);
-        }
-
         needsPanel.SetActive(true);
+        needsManager.ShowNeeds();
     }
 
     public void HideNeeds()
