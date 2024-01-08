@@ -46,9 +46,8 @@ public class NeedsManager : MonoBehaviour
     {
         timeSinceLastUpdate += Time.deltaTime;
 
-        if (timeSinceLastUpdate >= updateInterval & SceneSetup)
+        if (timeSinceLastUpdate >= updateInterval)
         {
-
             DecreaseNeeds(); // pretty much always decreasing
             timeSinceLastUpdate = 0.0f;
         }
@@ -56,6 +55,11 @@ public class NeedsManager : MonoBehaviour
         if (sceneChangeDetector.sceneChanged && !SceneSetup)
         {
             Instantiate();
+        }
+
+        if (SceneSetup && needsPanel.activeSelf)
+        {
+            ShowNeeds();
         }
     }
 

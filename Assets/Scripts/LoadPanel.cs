@@ -31,7 +31,6 @@ public class LoadPanel : MonoBehaviour
     public void ShowNeeds()
     {
         needsPanel.SetActive(true);
-        needsManager.ShowNeeds();
     }
 
     public void HideNeeds()
