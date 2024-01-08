@@ -9,8 +9,7 @@ public class NeedsManager : MonoBehaviour
 {
     public List<Need> needsList = new List<Need>();
     public List<GameObject> needsBars = new List<GameObject>();
-    public List<float> needsAmts = new List<float>();
-    private Dictionary<string, float> currentLevels = new Dictionary<string, float>();
+    private List<float> currentLevels = new List<float>();
 
     private float updateInterval = 1.0f;
     private float timeSinceLastUpdate = 0.0f;
@@ -31,7 +30,7 @@ public class NeedsManager : MonoBehaviour
 
         if (timeSinceLastUpdate >= updateInterval)
         {
-            Debug.Log("Updating Needs");
+            
             DecreaseNeeds(); // pretty much always decreasing
             timeSinceLastUpdate = 0.0f;
         }
@@ -43,21 +42,20 @@ public class NeedsManager : MonoBehaviour
     }
 
     void InitializeNeeds()
-    {
-        needsAmts = new List<float>(needsList.Count);
-
+    { 
+        // initialise list of needs and their values
         needsList.Clear();
-        needsList.Add(new Need("Hunger", 0, 110, 5, 110, needsBars[0]));
-        needsList.Add(new Need("Sleep", 0, 110, 8, 10, needsBars[1]));
-        needsList.Add(new Need("Toilet", 0, 110, 5, 110, needsBars[2]));
-        needsList.Add(new Need("Hygiene", 0, 110, 5, 110, needsBars[3]));
-        needsList.Add(new Need("Fun", 0, 110, 5, 110, needsBars[4]));
-        needsList.Add(new Need("Pain", 0, 80, 5, 110, needsBars[5]));
-        needsList.Add(new Need("Fatigue", 0, 90, 5, 110, needsBars[6]));
-        needsList.Add(new Need("Brain Fog", 0, 100, 5, 110, needsBars[7]));
-        needsList.Add(new Need("Social", 0, 110, 5, 110, needsBars[8]));
-        needsList.Add(new Need("Happiness", 0, 110, 5, 110, needsBars[9]));
-
+        currentLevels.Clear();
+        needsList.Add(new Need("Hunger", 10, 110, 2f, 110, needsBars[0]));
+        needsList.Add(new Need("Sleep", 10, 110, 2f, 10, needsBars[1]));
+        needsList.Add(new Need("Toilet", 10, 110, 1f, 110, needsBars[2]));
+        needsList.Add(new Need("Hygiene", 10, 110, 1f, 110, needsBars[3]));
+        needsList.Add(new Need("Fun", 10, 110, 2f, 110, needsBars[4]));
+        needsList.Add(new Need("Pain", 10, 110, 2f, 110, needsBars[5]));
+        needsList.Add(new Need("Fatigue", 10, 110, 2f, 110, needsBars[6]));
+        needsList.Add(new Need("Brain Fog", 10, 110, 2f, 110, needsBars[7]));
+        needsList.Add(new Need("Social", 10, 110, 2f, 110, needsBars[8]));
+        needsList.Add(new Need("Happiness", 10, 110, 2f, 110, needsBars[9]));
         ResetNeeds();
 
     }
@@ -70,26 +68,26 @@ public class NeedsManager : MonoBehaviour
         {
 
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
-            thisBar.SetValue(need.maxLevel); // set as new current value
-            needsAmts.Add(needsList[i].maxLevel); // add to needsAmts
+            thisBar.SetValue(110); // set as new current value
+            currentLevels.Add(needsList[i].maxLevel); // add to current values list
             i++; // continue iteration
+            // all needs are now at maximum levels
         }
 
     }
     public void DecreaseNeeds()
     {
-        for (int i = 0; i < needsList.Count; i++)
+
+        for (int i = 0; i < currentLevels.Count; i++)
         {
-            BarFill thisBar = needsBars[i].GetComponent<BarFill>();
-            float currentValue = thisBar.CurrentValue;
-            float newValue = currentValue - needsList[i].decreaseRate;
 
-            if (newValue < needsList[i].minLevel)
+            currentLevels[i] -= needsList[i].decreaseRate;
+
+            if (currentLevels[i] < needsList[i].minLevel)
             {
-                newValue = needsList[i].minLevel;
+                currentLevels[i] = needsList[i].minLevel;
             }
-
-            needsAmts[i] = newValue;
+            Debug.Log($"{needsList[i].name}: Current={currentLevels[i]}, DecreaseRate={needsList[i].decreaseRate}");
         }
     }
 
@@ -99,26 +97,23 @@ public class NeedsManager : MonoBehaviour
         foreach (Need need in needsList)
         {
             BarFill thisBar = needsBars[i].GetComponent<BarFill>();
-            thisBar.SetValue(needsAmts[i]); // set as new current value for each bar and show
-            i++; // continue iteration
+            thisBar.SetValue(currentLevels[i]); // set as new current valsue for each bar and show
+            i++; // continue iterations
         }
     }
 
-/*
+
     public void IncreaseNeeds(string name)
     {
         int index = GetNeedLocationByName(name);
         Need need = needsList[index];
         Debug.Log("Increasing " + name);
         BarFill thisBar = needsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
-        float currentValue = thisBar.CurrentValue; // get and store the current value
-        float newValue = currentValue + need.increaseRate; // new value is current plus this need's increasing value
-        if (newValue > need.maxLevel)
+        currentLevels[index] += need.increaseRate; // new value is current plus this need's increasing value
+        if (currentLevels[index] > need.maxLevel)
             {
-                newValue = need.maxLevel;
+            currentLevels[index] = need.maxLevel;
             }
-        needsAmts[index] = newValue; // assign value to list in same order
-
     }
 
     public int GetNeedLocationByName(string name) {
@@ -159,6 +154,6 @@ public class NeedsManager : MonoBehaviour
 
         return index;
     }
-*/
+
 
 }
