@@ -14,6 +14,7 @@ public class LoadPanel : MonoBehaviour
     { 
         HideCalendar();
         HideTasks();
+        needsManager = GameObject.Find("NeedsManager").GetComponent<NeedsManager>();    
     }
 
 
@@ -83,5 +84,12 @@ public class LoadPanel : MonoBehaviour
         {
             ShowCalendar();
         }
+    }
+
+    public void HideAllUI()
+    {
+        HideTasks();
+        HideNeeds();
+        HideCalendar();
     }
 }
