@@ -14,7 +14,6 @@ public class LoadPanel : MonoBehaviour
     { 
         HideCalendar();
         HideTasks();
-        HideNeeds();
     }
 
 

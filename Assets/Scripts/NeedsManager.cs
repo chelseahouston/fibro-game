@@ -15,18 +15,27 @@ public class NeedsManager : MonoBehaviour
     private float timeSinceLastUpdate = 0.0f;
 
     public LoadPanel loadpanel;
+    public GameObject UI, needsPanel;
 
+    private void Awake()
+    {
+        UI = GameObject.Find("UI");
+        loadpanel = UI.GetComponent<LoadPanel>();
+        needsPanel = GameObject.FindWithTag("NeedsPanel");
+        
+    }
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Home") // placeholder for first playthrough for now
-        {
-            InitializeNeeds();
-        }
+        InitializeNeeds();
+        loadpanel.HideNeeds();
     }
 
     public void Update()
     {
         timeSinceLastUpdate += Time.deltaTime;
+
+        //Debug.Log($"timeSinceLastUpdate: {timeSinceLastUpdate}");
+        //Debug.Log($"needsPanel active: {needsPanel.activeSelf}");
 
         if (timeSinceLastUpdate >= updateInterval)
         {
@@ -34,15 +43,30 @@ public class NeedsManager : MonoBehaviour
             DecreaseNeeds(); // pretty much always decreasing
             timeSinceLastUpdate = 0.0f;
         }
+        
 
-        if (loadpanel.needsPanel.activeSelf)
+        if (needsPanel.activeSelf)
         {
             ShowNeeds();
         }
     }
 
+
     void InitializeNeeds()
-    { 
+    {
+        // assign bars to objects on current scene
+        needsBars.Clear();
+        needsBars.Add(GameObject.Find("HungerBar"));
+        needsBars.Add(GameObject.Find("SleepBar"));
+        needsBars.Add(GameObject.Find("ToiletBar"));
+        needsBars.Add(GameObject.Find("HygieneBar"));
+        needsBars.Add(GameObject.Find("FunBar"));
+        needsBars.Add(GameObject.Find("PainBar"));
+        needsBars.Add(GameObject.Find("FatigueBar"));
+        needsBars.Add(GameObject.Find("BrainFogBar"));
+        needsBars.Add(GameObject.Find("SocialBar"));
+        needsBars.Add(GameObject.Find("HappinessBar"));
+
         // initialise list of needs and their values
         needsList.Clear();
         currentLevels.Clear();
