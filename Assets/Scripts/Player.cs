@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public string sceneName;
     public LoadPanel loadpanel;
 
+
     private void Awake()
     {
         // Ensure there is only one instance of the Player object
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         SetStartingPositions();
         LoadSceneAndSetPosition("Home", gameLoadPos); // load out of bed
         loadpanel = GameObject.Find("UI").GetComponent<LoadPanel>();
+
     }
 
     private void SetStartingPositions()

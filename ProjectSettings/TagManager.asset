@@ -6,22 +6,22 @@ TagManager:
   tags:
   - UItext
   - UIicon
-  - TV
   - User
-  - Bath
   - Toilet
-  - Bed
-  - Stove
-  - Fridge
-  - Armchair
-  - Sofa
-  - Fire
-  - Desk
   - HomeDoor
   - ShopDoor
   - MedicalDoor
   - CommDoor
   - NeedsPanel
+  - Hygiene
+  - Happiness
+  - Fatigue
+  - BrainFog
+  - Pain
+  - Hunger
+  - Sleep
+  - Social
+  - Fun
   layers:
   - Default
   - TransparentFX

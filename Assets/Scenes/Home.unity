@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 83783364}
   m_Layer: 0
   m_Name: SofaCollider
-  m_TagString: Sofa
+  m_TagString: Fatigue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6404,7 +6404,7 @@ GameObject:
   - component: {fileID: 936725989}
   m_Layer: 0
   m_Name: StoveCollider
-  m_TagString: Stove
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7804,7 +7804,7 @@ GameObject:
   - component: {fileID: 1110479471}
   m_Layer: 0
   m_Name: BedCollider
-  m_TagString: Bed
+  m_TagString: Sleep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8399,7 +8399,7 @@ GameObject:
   - component: {fileID: 1163289757}
   m_Layer: 0
   m_Name: ArmchairCollider
-  m_TagString: Armchair
+  m_TagString: Fatigue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9302,7 +9302,7 @@ GameObject:
   - component: {fileID: 1267148531}
   m_Layer: 0
   m_Name: FridgeCollider
-  m_TagString: Fridge
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10300,7 +10300,7 @@ GameObject:
   - component: {fileID: 1390203758}
   m_Layer: 0
   m_Name: DeskCollider
-  m_TagString: Desk
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14210,7 +14210,7 @@ GameObject:
   - component: {fileID: 1508367201}
   m_Layer: 0
   m_Name: FireCollider
-  m_TagString: Fire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14709,7 +14709,7 @@ GameObject:
   - component: {fileID: 1612498196}
   m_Layer: 0
   m_Name: BathCollider
-  m_TagString: Bath
+  m_TagString: Hygiene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14931,7 +14931,7 @@ GameObject:
   - component: {fileID: 1644246200}
   m_Layer: 0
   m_Name: TvCollider
-  m_TagString: TV
+  m_TagString: Fun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15469,9 +15469,10 @@ GameObject:
   - component: {fileID: 1735572656}
   - component: {fileID: 1735572657}
   - component: {fileID: 1735572658}
+  - component: {fileID: 1735572659}
   m_Layer: 0
   m_Name: Player
-  m_TagString: User
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15685,6 +15686,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.7}
   m_Size: {x: 0.6, y: 0.6}
   m_Direction: 0
+--- !u!114 &1735572659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735572651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54453e43a7c04645a3828483f73a6db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needsManager: {fileID: 506740417}
 --- !u!1 &1767501113
 GameObject:
   m_ObjectHideFlags: 0
@@ -17336,7 +17350,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 1.7635355
+      m_AnimationSpeed: 4.7726703
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
