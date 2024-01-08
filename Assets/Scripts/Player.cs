@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public Vector3 homePosition, shopPosition, commPosition, medPosition, gameLoadPos; // player's inside positions
     public Vector3 outsideHomePos, outsideShopPos, outsideCommPosition, outsideMedPos; // player's outside positions
     public string sceneName;
+    public LoadPanel loadpanel;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         SetStartingPositions();
         LoadSceneAndSetPosition("Home", gameLoadPos); // load out of bed
+        loadpanel = GameObject.Find("UI").GetComponent<LoadPanel>();
     }
 
     private void SetStartingPositions()
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
 
         sceneName = SceneManager.GetActiveScene().name;
 
+
         switch (sceneName)
         {
             case "Home":
@@ -96,6 +99,8 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    
 
     private void LeaveHomeScene(Collider2D thing)
     {
@@ -154,6 +159,7 @@ public class Player : MonoBehaviour
         // disable the player's renderer component
         Renderer rendererComponent = GetComponent<Renderer>();
         rendererComponent.enabled = false;
+        loadpanel.HideAllUI();
 
         SceneManager.LoadScene(scene);
 

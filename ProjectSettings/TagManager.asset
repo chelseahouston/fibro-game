@@ -21,6 +21,7 @@ TagManager:
   - ShopDoor
   - MedicalDoor
   - CommDoor
+  - NeedsPanel
   layers:
   - Default
   - TransparentFX

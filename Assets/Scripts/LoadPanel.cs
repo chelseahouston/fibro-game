@@ -7,22 +7,19 @@ public class LoadPanel : MonoBehaviour
     public GameObject needsPanel;
     public GameObject tasksPanel;
     public GameObject calendarPanel;
+    public NeedsManager needsManager;
 
 
     private void Start() 
     { 
         HideCalendar();
         HideTasks();
-        HideNeeds();
+        needsManager = GameObject.Find("NeedsManager").GetComponent<NeedsManager>();    
     }
 
 
     public void ShowTasks()
     {
-        if (needsPanel.activeSelf)
-        {
-            needsPanel.SetActive(false);
-        }
         tasksPanel.SetActive(true);
     }
 
@@ -33,11 +30,6 @@ public class LoadPanel : MonoBehaviour
 
     public void ShowNeeds()
     {
-        if (tasksPanel.activeSelf)
-        {
-            tasksPanel.SetActive(false);
-        }
-
         needsPanel.SetActive(true);
     }
 
@@ -91,5 +83,12 @@ public class LoadPanel : MonoBehaviour
         {
             ShowCalendar();
         }
+    }
+
+    public void HideAllUI()
+    {
+        HideTasks();
+        HideNeeds();
+        HideCalendar();
     }
 }
