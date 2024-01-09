@@ -6,8 +6,69 @@ public class IncreaseNeeds : MonoBehaviour
 {
     public NeedsManager needsManager;
     private bool triggered;
-    public new string tag;
+    public List<string> needs = new List<string>();
+    public List<Item> items = new List<Item>();
+    public Item item;
 
+    void Start()
+    {
+        AddItems();
+    }
+
+    private void AddItems()
+    {
+        items.Clear();
+        items.Add(new Item("Bath"));
+        items.Add(new Item("Toilet"));
+        items.Add(new Item("TV"));
+        items.Add(new Item("Chair"));
+        items.Add(new Item("Bench"));
+        items.Add(new Item("Bed"));
+        items.Add(new Item("Computer"));
+        items.Add(new Item("Fridge"));
+        items.Add(new Item("Stove"));
+
+        // Bath Values
+        items[0].SetNeedIncreaseValue("Hygiene", 100);
+        items[0].SetNeedIncreaseValue("Pain", 70);
+        items[0].SetNeedIncreaseValue("Happiness", 50);
+
+        // Toilet Values
+        items[1].SetNeedIncreaseValue("Toilet", 110);
+
+        // TV Values
+        items[2].SetNeedIncreaseValue("Fun", 50);
+        items[2].SetNeedIncreaseValue("Happiness", 60);
+
+        // Chair/Sofa Values
+        items[3].SetNeedIncreaseValue("Fatigue", 40);
+        items[3].SetNeedIncreaseValue("Pain", 10);
+
+        // Bench Values
+        items[4].SetNeedIncreaseValue("Fatigue", 40);
+
+        // Bed Values
+        items[5].SetNeedIncreaseValue("Fatigue", 40);
+        items[5].SetNeedIncreaseValue("Sleep", 90);
+
+        // Computer Values
+        items[6].SetNeedIncreaseValue("Social", 50);
+
+        // Fridge Values
+        items[7].SetNeedIncreaseValue("Hunger", 60);
+        items[7].SetNeedIncreaseValue("Happiness", 30);
+
+        // Stove Values
+        items[8].SetNeedIncreaseValue("Hunger", 90);
+        items[8].SetNeedIncreaseValue("Happiness", 30);
+
+
+    }
+
+    public void SetItem(Item newItem)
+    {
+        item = newItem;
+    }
 
     private void Update()
     {
@@ -18,8 +79,9 @@ public class IncreaseNeeds : MonoBehaviour
             if (triggered)
             {
                 // increase the needs for that object
-                needsManager.IncreaseNeeds(tag);
+                item.IncreaseNeeds();
                 triggered = false; // reset bool
+ 
             }
         }
     }
@@ -32,9 +94,15 @@ public class IncreaseNeeds : MonoBehaviour
         }
         else
         {
-            triggered = true;
-            tag = thing.tag;
-            // set tag for use in Update method to increase needs for the item
+            foreach (Item item in items)
+            {
+                if (item.name == thing.name)
+                {
+                    SetItem(item);
+                    triggered = true;
+                }
+            }
+            
         }
     }
 }

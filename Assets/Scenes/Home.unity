@@ -2952,6 +2952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506740416}
   - component: {fileID: 506740417}
+  - component: {fileID: 506740418}
   m_Layer: 0
   m_Name: NeedsManager
   m_TagString: Untagged
@@ -3003,6 +3004,20 @@ MonoBehaviour:
   needsPanel: {fileID: 593975358}
   sceneChangeDetector: {fileID: 0}
   SceneSetup: 0
+--- !u!114 &506740418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506740414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791b954f36ad9b947b26d10e320c2ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needsManager: {fileID: 506740417}
+  name: 
 --- !u!1 &507936834
 GameObject:
   m_ObjectHideFlags: 0
@@ -15699,6 +15714,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needsManager: {fileID: 506740417}
+  needs: []
+  items: []
+  item: {fileID: 506740418}
 --- !u!1 &1767501113
 GameObject:
   m_ObjectHideFlags: 0
@@ -17350,7 +17368,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 4.7726703
+      m_AnimationSpeed: 3.8687913
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

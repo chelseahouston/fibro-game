@@ -89,16 +89,16 @@ public class NeedsManager : MonoBehaviour
         
         needsList.Clear();
         currentLevels.Clear();
-        needsList.Add(new Need("Hunger", 10, 110, 0.4f, 110, needsBars[0]));
-        needsList.Add(new Need("Sleep", 10, 110, 0.8f, 10, needsBars[1]));
-        needsList.Add(new Need("Toilet", 10, 110, 0.6f, 110, needsBars[2]));
-        needsList.Add(new Need("Hygiene", 10, 110, 0.4f, 110, needsBars[3]));
-        needsList.Add(new Need("Fun", 10, 110, 0.6f, 110, needsBars[4]));
-        needsList.Add(new Need("Pain", 10, 100, 0.9f, 110, needsBars[5]));
-        needsList.Add(new Need("Fatigue", 10, 100, 0.8f, 110, needsBars[6]));
-        needsList.Add(new Need("Brain Fog", 10, 100, 0.6f, 110, needsBars[7]));
-        needsList.Add(new Need("Social", 10, 110, 0.3f, 110, needsBars[8]));
-        needsList.Add(new Need("Happiness", 10, 110, 0.4f, 110, needsBars[9]));
+        needsList.Add(new Need("Hunger", 10, 110, 0.4f, needsBars[0]));
+        needsList.Add(new Need("Sleep", 10, 110, 0.8f, needsBars[1]));
+        needsList.Add(new Need("Toilet", 10, 110, 0.6f, needsBars[2]));
+        needsList.Add(new Need("Hygiene", 10, 110, 0.4f, needsBars[3]));
+        needsList.Add(new Need("Fun", 10, 110, 0.6f, needsBars[4]));
+        needsList.Add(new Need("Pain", 10, 100, 0.9f, needsBars[5]));
+        needsList.Add(new Need("Fatigue", 10, 100, 0.8f, needsBars[6]));
+        needsList.Add(new Need("Brain Fog", 10, 100, 0.6f, needsBars[7]));
+        needsList.Add(new Need("Social", 10, 110, 0.3f, needsBars[8]));
+        needsList.Add(new Need("Happiness", 10, 110, 0.4f, needsBars[9]));
 
         ResetNeeds();
         
@@ -148,13 +148,13 @@ public class NeedsManager : MonoBehaviour
     }
 
 
-    public void IncreaseNeeds(string name)
+    public void IncreaseNeeds(string name, int increaseRate)
     {
         int index = GetNeedLocationByName(name);
         Need need = needsList[index];
         Debug.Log("Increasing " + name);
         BarFill thisBar = needsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
-        currentLevels[index] += need.increaseRate; // new value is current plus this need's increasing value
+        currentLevels[index] += increaseRate; // new value is current plus this need's increasing value
         if (currentLevels[index] > need.maxLevel)
             {
             currentLevels[index] = need.maxLevel;
