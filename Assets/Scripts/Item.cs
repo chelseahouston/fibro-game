@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using UnityEngine;
-
-public class Item : MonoBehaviour
+[System.Serializable]
+public class Item
 {
     private Dictionary<string, int> needIncreases = new Dictionary<string, int>();
     public NeedsManager needsManager;
-    public string name;
+    public string itemName;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
 
     public Item(string name)
     {
-        this.name = name;
+        this.itemName = name;
     }
 
     public void SetNeedIncreaseValue(string need, int value)

@@ -94,15 +94,16 @@ public class IncreaseNeeds : MonoBehaviour
         }
         else
         {
-            foreach (Item item in items)
+            item = items.Find(item => item.itemName == thing.name);
+            if (item != null)
             {
-                if (item.name == thing.name)
-                {
-                    SetItem(item);
-                    triggered = true;
-                }
+                SetItem(item);
+                triggered = true;
             }
-            
+            else
+            {
+                Debug.Log("No item matching game object");            
+            }
         }
     }
 }
