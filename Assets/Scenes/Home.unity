@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 83783363}
   - component: {fileID: 83783364}
   m_Layer: 0
-  m_Name: SofaCollider
+  m_Name: Sofa
   m_TagString: Fatigue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 244359345}
   - component: {fileID: 244359344}
   m_Layer: 0
-  m_Name: LampCol
+  m_Name: Lamp1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1859,7 +1859,7 @@ GameObject:
   - component: {fileID: 390037741}
   - component: {fileID: 390037740}
   m_Layer: 0
-  m_Name: SinkColl
+  m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6403,7 +6403,7 @@ GameObject:
   - component: {fileID: 936725988}
   - component: {fileID: 936725989}
   m_Layer: 0
-  m_Name: StoveCollider
+  m_Name: Stove
   m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7803,7 +7803,7 @@ GameObject:
   - component: {fileID: 1110479470}
   - component: {fileID: 1110479471}
   m_Layer: 0
-  m_Name: BedCollider
+  m_Name: Bed
   m_TagString: Sleep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7896,7 +7896,7 @@ GameObject:
   - component: {fileID: 1111309703}
   - component: {fileID: 1111309704}
   m_Layer: 0
-  m_Name: WardrobeCollider
+  m_Name: Wardrobe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8398,7 +8398,7 @@ GameObject:
   - component: {fileID: 1163289756}
   - component: {fileID: 1163289757}
   m_Layer: 0
-  m_Name: ArmchairCollider
+  m_Name: Armchair
   m_TagString: Fatigue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8869,7 +8869,7 @@ GameObject:
   - component: {fileID: 1234472192}
   - component: {fileID: 1234472193}
   m_Layer: 0
-  m_Name: TableChairCollider
+  m_Name: TableChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9209,7 +9209,7 @@ GameObject:
   - component: {fileID: 1265768324}
   - component: {fileID: 1265768323}
   m_Layer: 0
-  m_Name: LampCol (1)
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9301,7 +9301,7 @@ GameObject:
   - component: {fileID: 1267148530}
   - component: {fileID: 1267148531}
   m_Layer: 0
-  m_Name: FridgeCollider
+  m_Name: Fridge
   m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10299,7 +10299,7 @@ GameObject:
   - component: {fileID: 1390203757}
   - component: {fileID: 1390203758}
   m_Layer: 0
-  m_Name: DeskCollider
+  m_Name: Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14209,7 +14209,7 @@ GameObject:
   - component: {fileID: 1508367200}
   - component: {fileID: 1508367201}
   m_Layer: 0
-  m_Name: FireCollider
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14562,7 +14562,7 @@ GameObject:
   - component: {fileID: 1597509609}
   - component: {fileID: 1597509610}
   m_Layer: 0
-  m_Name: ToiletCollider
+  m_Name: Toilet
   m_TagString: Toilet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14708,7 +14708,7 @@ GameObject:
   - component: {fileID: 1612498195}
   - component: {fileID: 1612498196}
   m_Layer: 0
-  m_Name: BathCollider
+  m_Name: Bath
   m_TagString: Hygiene
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14930,7 +14930,7 @@ GameObject:
   - component: {fileID: 1644246199}
   - component: {fileID: 1644246200}
   m_Layer: 0
-  m_Name: TvCollider
+  m_Name: TV
   m_TagString: Fun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17355,7 +17355,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 3.3175852
+      m_AnimationSpeed: 2.9968688
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

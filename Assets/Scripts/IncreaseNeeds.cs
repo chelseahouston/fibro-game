@@ -15,6 +15,22 @@ public class IncreaseNeeds : MonoBehaviour
         AddItems();
     }
 
+    private void Update()
+    {
+        // if action button pressed
+        if (Input.GetKeyDown(KeyCode.E))
+
+        { // if within trigger area of an object
+            if (triggered)
+            {
+                // increase the needs for that object
+                item.IncreaseNeeds();
+                triggered = false; // reset bool
+
+            }
+        }
+    }
+
     private void AddItems()
     {
         items.Clear();
@@ -27,6 +43,7 @@ public class IncreaseNeeds : MonoBehaviour
         items.Add(new Item("Computer"));
         items.Add(new Item("Fridge"));
         items.Add(new Item("Stove"));
+
 
         // Bath Values
         items[0].SetNeedIncreaseValue("Hygiene", 100);
@@ -65,26 +82,19 @@ public class IncreaseNeeds : MonoBehaviour
 
     }
 
-    public void SetItem(Item newItem)
+    public void GetItem(string name)
     {
-        item = newItem;
-    }
-
-    private void Update()
-    {
-        // if action button pressed
-        if (Input.GetKeyDown(KeyCode.E))
-
-        { // if within trigger area of an object
-            if (triggered)
+        foreach (Item i in items)
+        {
+            if (i.itemName == name)
             {
-                // increase the needs for that object
-                item.IncreaseNeeds();
-                triggered = false; // reset bool
- 
+                item = i; 
+                break;
             }
         }
     }
+
+
     public void OnTriggerEnter2D(Collider2D thing)
     {
         // if it doesnt hve a trigger collider, don't do anything
@@ -94,10 +104,11 @@ public class IncreaseNeeds : MonoBehaviour
         }
         else
         {
-            item = items.Find(item => item.itemName == thing.name);
+            GetItem(thing.name);
+            
             if (item != null)
             {
-                SetItem(item);
+                item.needsManager = needsManager;
                 triggered = true;
             }
             else

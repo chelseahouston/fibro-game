@@ -150,9 +150,11 @@ public class NeedsManager : MonoBehaviour
 
     public void IncreaseNeeds(string name, int increaseRate)
     {
+        Debug.Log("Increasing " + name);
+
         int index = GetNeedLocationByName(name);
         Need need = needsList[index];
-        Debug.Log("Increasing " + name);
+        
         BarFill thisBar = needsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
         currentLevels[index] += increaseRate; // new value is current plus this need's increasing value
         if (currentLevels[index] > need.maxLevel)

@@ -1,28 +1,46 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
+using static UnityEditor.Progress;
+
 [System.Serializable]
 public class Item
 {
-    private Dictionary<string, int> needIncreases = new Dictionary<string, int>();
+    public Dictionary<string, int> needIncreases;
     public NeedsManager needsManager;
     public string itemName;
-
-    void Start()
-    {
-
-    }
 
     public Item(string name)
     {
         this.itemName = name;
+        this.needIncreases = new Dictionary<string, int>();
     }
 
     public void SetNeedIncreaseValue(string need, int value)
     {
-        needIncreases[need] = value;
+        needIncreases.Add(need, value);
+
+    }
+
+    public void IncreaseNeeds()
+    {
+        
+        if (needsManager != null)
+        {
+            
+            Debug.Log("needs to increase: " + needIncreases.Count);
+            for (int i = 0; i < needIncreases.Count; i++)
+            {
+                Debug.Log("Increasing needs for " + itemName);
+                KeyValuePair<string, int> need = GetElementAtIndex(needIncreases, i);
+                int increaseValue = need.Value;
+                needsManager.IncreaseNeeds(need.Key, increaseValue);
+            }
+        }
+        else
+        {
+            Debug.LogError("NeedsManager not assigned to Item: " + itemName);
+        }
     }
 
     static KeyValuePair<TKey, TValue> GetElementAtIndex<TKey, TValue>(Dictionary<TKey, TValue> dictionary, int index)
@@ -37,15 +55,5 @@ public class Item
 
         // Access the element by index in the list
         return list[index];
-    }
-
-
-    public void IncreaseNeeds()
-    {
-        for (int i = 0; i < needIncreases.Count; i++) {
-            KeyValuePair<string, int> need = GetElementAtIndex(needIncreases, i);
-            int increaseValue = need.Value;
-            needsManager.IncreaseNeeds(need.Key, increaseValue);
-        }
     }
 }
