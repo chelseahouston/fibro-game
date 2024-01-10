@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 614163176}
   - component: {fileID: 614163175}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PKS Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: V1.0
+  m_text: V_1.0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
   m_sharedMaterial: {fileID: 2675833605748378447, guid: eb84a59a75fbb5f4cbd42f4ea1624a89, type: 2}
