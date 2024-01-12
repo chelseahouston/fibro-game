@@ -147,6 +147,27 @@ TextureImporter:
       name: reception_1
       rect:
         serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352ab95b99cd4d843873f680be96edcc
+      internalID: 1158059825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reception_2
+      rect:
+        serializedVersion: 2
         x: 32
         y: 32
         width: 16
@@ -158,28 +179,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a8a18be505cf8240ad0dea34c0b7595
-      internalID: 1158059825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: reception_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fcaeb5124ff77a44adf763e6af8864c
+      spriteID: 3fca90eac49fd364b9e31cddafe4ac28
       internalID: 159449781
       vertices: []
       indices: 
@@ -189,6 +189,27 @@ TextureImporter:
       name: reception_3
       rect:
         serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151c7e3baab61bc48a3e4f190b5a73d7
+      internalID: -474540678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: reception_4
+      rect:
+        serializedVersion: 2
         x: 16
         y: 16
         width: 16
@@ -200,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 379c014d1cfb52f43806b17e389badf8
-      internalID: -474540678
+      spriteID: 809af4a8f05771e46b396a0afba15b4c
+      internalID: 936118122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reception_4
+      name: reception_5
       rect:
         serializedVersion: 2
         x: 32
@@ -221,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24bd81cc671217944ae34b092ded053e
-      internalID: 936118122
+      spriteID: 2af3aa0bece2cb74298141422dfb9e72
+      internalID: 1929511146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reception_5
+      name: reception_6
       rect:
         serializedVersion: 2
         x: 0
@@ -242,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12178bebd01943f46a153bb14ac871a5
-      internalID: 1929511146
+      spriteID: 0590a77365d387d428e4932874bb410f
+      internalID: -803666016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reception_6
+      name: reception_7
       rect:
         serializedVersion: 2
         x: 16
@@ -263,14 +284,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b15ad84c7a7d444eb1ab850db27b078
-      internalID: -803666016
+      spriteID: f72092958a5ede04b9a6414f3b5d899a
+      internalID: -289847890
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: reception_7
+      name: reception_8
       rect:
         serializedVersion: 2
         x: 32
@@ -284,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ccfe213d985363449a5dbcffcc25170
-      internalID: -289847890
+      spriteID: 724ff662848fa1849a906adad9e890be
+      internalID: -1505226181
       vertices: []
       indices: 
       edges: []
@@ -309,6 +330,7 @@ TextureImporter:
       reception_5: 1929511146
       reception_6: -803666016
       reception_7: -289847890
+      reception_8: -1505226181
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
