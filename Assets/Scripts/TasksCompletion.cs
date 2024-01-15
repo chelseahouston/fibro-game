@@ -3,57 +3,66 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Collections;
 
 public class TaskManager : MonoBehaviour
 {
     public TextMeshProUGUI[] taskTexts;
     public Image[] completionImages;
-    public Dictionary<int, string> tasklist = new Dictionary<int, string>();
+    public List<string> tasklist = new List<string>();
+
+    // for future use of adding tasks gradually
+    public List<string> activeTaskList = new List<string>();
 
 
     private void Start()
     {
-        PopulateTaskList(); // test
-        AssignTasks();
-        CompleteTask(0); // test to show first task completed only
-
-        
+        // testing - - - -
+        PopulateTaskList();
+        RandomlyAssignTasks();
     }
 
-
+    // tasks to be gradually shown throughout the gameplay to help advance the story - the below are placeholers
     public void PopulateTaskList()
     {
         tasklist.Clear();
-        tasklist.Add(1, "Bathe once today");
-        tasklist.Add(2, "Work for 4 hours total");
-        tasklist.Add(3, "Cook a meal from scratch");
-        tasklist.Add(4, "Go for a walk for an hour");
-        tasklist.Add(5, "Attend the Community Club Support Group");
-        tasklist.Add(6, "Socialise with a friend");
-        tasklist.Add(7, "Go to sleep before 10pm");
-        tasklist.Add(8, "Watch TV");
-        tasklist.Add(9, "Wash the dishes");
-        tasklist.Add(10, "Spend time with your pet");
-        tasklist.Add(11, "Take your meds");
-        tasklist.Add(12, "Brush your teeth");
-        tasklist.Add(13, "Vaccuum");
-        tasklist.Add(14, "Play Video Games");
-        tasklist.Add(15, "Read a book");
-        tasklist.Add(16, "Feed your pet");
-        tasklist.Add(17, "Buy Groceries");
-        tasklist.Add(18, "Study for 3 hours total");
-        tasklist.Add(19, "Meditate Outside");
-        tasklist.Add(20, "Go to the Cinema");
+        tasklist.Add("Visit the Community Club");
+        tasklist.Add("Complete your work Project");
+        tasklist.Add("Cook a meal from scratch");
+        tasklist.Add("Go for a walk for an hour");
+        tasklist.Add("Attend the Community Club Support Group");
+        tasklist.Add("Socialise with a friend");
+        tasklist.Add("Go to sleep before 10pm");
+        tasklist.Add("Study for 3 hours total");
+        tasklist.Add("Meditate Outside");
+        tasklist.Add("Go to the Cinema");
     }
 
-    public void AssignTasks()
+    public void RandomlyAssignTasks()
     {
         ResetTasks();
         for (int i = 0; i < taskTexts.Length; i++)
         {
-            int randomKey = Random.Range(1, tasklist.Count + 1);
-            taskTexts[i].text = tasklist[randomKey];
-            // tasklist.Remove(randomKey);
+            if (tasklist.Count > 0)
+            {
+                int randomKey = Random.Range(0, tasklist.Count);
+                string task = tasklist[randomKey];
+                taskTexts[i].text = task;
+                tasklist.RemoveAt(randomKey);
+            }
+            else
+            {
+                Debug.LogWarning("Not enough tasks in the list to assign.");
+            }
+        }
+    }
+
+    // for future of adding one task gradually to progress the story
+    public void AssignTask(string task)
+    {
+        if (tasklist.Contains(task))
+        {
+            activeTaskList.Add(task);
         }
     }
 
