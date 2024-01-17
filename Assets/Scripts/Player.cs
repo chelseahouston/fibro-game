@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public Vector3 outsideHomePos, outsideShopPos, outsideCommPosition, outsideMedPos; // player's outside positions
     public string sceneName;
     public LoadPanel loadpanel;
+    public bool mailRead, mailDay;
+    public string playerName;
+    private TimeManager timeManager;
 
 
     private void Awake()
@@ -30,12 +33,15 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        playerName = "PineKone Studios";
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SetStartingPositions();
         LoadSceneAndSetPosition("Home", gameLoadPos); // load out of bed
         loadpanel = GameObject.Find("UI").GetComponent<LoadPanel>();
-
+        timeManager = GameObject.Find("DayTimePanel").GetComponent<TimeManager>();
+        mailDay = false;
+        mailRead = false;
     }
 
     private void SetStartingPositions()
@@ -65,6 +71,15 @@ public class Player : MonoBehaviour
         animator.SetFloat("Vertical", verticalInput);
         animator.SetFloat("Horizontal", horizontalInput);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (timeManager.IsItMailDay())
+        {
+            mailDay = true;
+        }
+        else
+        {
+            mailDay = false;
+        }
 
     }
 
