@@ -117,4 +117,10 @@ public class IncreaseNeeds : MonoBehaviour
             }
         }
     }
+
+    public void OnTriggerExit2D(Collider2D thing)
+    {
+        item = null;
+        triggered = false;
+    }
 }

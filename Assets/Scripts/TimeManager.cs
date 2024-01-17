@@ -18,7 +18,8 @@ public class TimeManager : MonoBehaviour
     private int currentYear; // 1 +
     private bool is24HourFormat = true; // defaults to 24-hour format
 
-    private const float realTimePerGame15Minute = 10f; // increase by 15 minutes every 10 seconds real time
+    private const float realTimePerGame15Minute = 1f; // increase by 15 minutes every 5 seconds real time
+
 
     void Start()
     {
@@ -36,6 +37,11 @@ public class TimeManager : MonoBehaviour
         currentYear = 1;
     }
 
+    public int GetCurentDate()
+    {
+        return currentDate;
+    }
+
     void ProgressTime()
     {
         currentTime = currentTime.AddMinutes(15);
@@ -51,6 +57,7 @@ public class TimeManager : MonoBehaviour
     void ProgressDate()
     {
         currentDate++;
+
         if (currentDate > 28)
         {
             currentDate = 1;
@@ -61,6 +68,7 @@ public class TimeManager : MonoBehaviour
                 currentYear++;
             }
         }
+
         // Reset time to 7:00 AM when a new day starts
         currentTime = new DateTime(currentYear, currentMonth, currentDate, 0, 0, 0);
         currentDay = GetDayOfWeekForCurrentDate();

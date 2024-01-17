@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Vector3 outsideHomePos, outsideShopPos, outsideCommPosition, outsideMedPos; // player's outside positions
     public string sceneName;
     public LoadPanel loadpanel;
+    public bool mailRead;
 
 
     private void Awake()
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         SetStartingPositions();
         LoadSceneAndSetPosition("Home", gameLoadPos); // load out of bed
         loadpanel = GameObject.Find("UI").GetComponent<LoadPanel>();
-
+        mailRead = false;
     }
 
     private void SetStartingPositions()
