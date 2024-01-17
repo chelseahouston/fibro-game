@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class MailManager : MonoBehaviour
 {
     public GameObject mailGrid; // mailbox with mail
     public GameObject mailPopup; // what the letter says popup
+    public TextMeshProUGUI mailTitle, mailBody;
+    public Dictionary<string, string> mails = new Dictionary<string, string>(); // title , body
     private bool readTrigger;
     private TimeManager timeManager;
     private Player player;
@@ -15,17 +18,21 @@ public class MailManager : MonoBehaviour
     void Start()
     {
         mailGrid.GetComponent<Renderer>().enabled = false;
-        mailPopup.SetActive(false);
+        
         readTrigger = false;
+
+        PopulateMailDictionary();
+        mailPopup.SetActive(false);
 
         // start testing mail
         player = GameObject.Find("Player").GetComponent<Player>();
         timeManager = GameObject.Find("DayTimePanel").GetComponent<TimeManager>();
-        if (timeManager.GetCurentDate() == 2 & !player.mailRead)
+        if (player.mailDay & !player.mailRead)
         {
             YouveGotMail();
         }
-        // end testing mail
+        // end testing
+        
     }
 
     // Update is called once per frame
@@ -43,6 +50,7 @@ public class MailManager : MonoBehaviour
     public void YouveGotMail()
     {
         mailGrid.GetComponent<Renderer>().enabled = true;
+        SetMail("Community Centre Grand Opening!");
     }
 
     public void CloseMail()
@@ -55,7 +63,7 @@ public class MailManager : MonoBehaviour
         mailPopup.SetActive(true);
         readTrigger = false;
         mailGrid.GetComponent<Renderer>().enabled = false;
-        player.mailRead = false;
+        player.mailRead = true;
     }
 
     private void OnTriggerEnter2D(Collider2D thing)
@@ -79,5 +87,29 @@ public class MailManager : MonoBehaviour
         }
     }
 }
+
+    private void PopulateMailDictionary()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+        mails.Clear();
+        mails.Add("Community Centre Grand Opening!", "Hey " + player.playerName + ", \nThe Community Centre is now open!\nHope to see you there soon!\n\n - Sammie");
+        //mails.Add("", "");
+        //mails.Add("", "");
+        //mails.Add("", "");
+        //mails.Add("", "");
+    }
+
+    public void SetMail(string title)
+    {
+        if (mails.ContainsKey(title))
+        {
+            mailTitle.text = title;
+            mails.TryGetValue(title, out string text);
+            mailBody.text = text;
+        }
+        
+    }
+
+
 
 }

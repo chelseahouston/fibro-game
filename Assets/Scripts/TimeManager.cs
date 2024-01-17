@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,8 @@ public class TimeManager : MonoBehaviour
     private int currentYear; // 1 +
     private bool is24HourFormat = true; // defaults to 24-hour format
 
+    public List<int> mailDays = new List<int>(); // days user gets mail
+
     private const float realTimePerGame15Minute = 1f; // increase by 15 minutes every 5 seconds real time
 
 
@@ -26,6 +29,7 @@ public class TimeManager : MonoBehaviour
         InitializeGameTime();
         UpdateUI();
         InvokeRepeating("ProgressTime", 0f, realTimePerGame15Minute);
+        InitializeMailDays();
     }
 
     void InitializeGameTime()
@@ -121,6 +125,22 @@ public class TimeManager : MonoBehaviour
             return "";
 
 
+        }
+    }
+
+    private void InitializeMailDays()
+    {
+        mailDays.Clear();
+        mailDays.AddRange(new[] { 1, 5, 9, 15, 19, 22, 27 });
+    }
+
+    public bool IsItMailDay()
+    {
+        if (mailDays.Contains(currentDate)) { 
+            return true; 
+        }
+        else { 
+            return false; 
         }
     }
 
