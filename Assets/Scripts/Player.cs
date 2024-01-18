@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public bool mailRead, mailDay;
     public string playerName;
     private TimeManager timeManager;
+    public PlayerData playerData;
 
 
     private void Awake()
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        playerName = "PineKone Studios";
+        playerName = playerData.playerName;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SetStartingPositions();

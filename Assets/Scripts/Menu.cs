@@ -5,14 +5,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
-{
-
-    public TextMeshProUGUI Start;
+{ 
 
 
     public void LoadGame()
     {
         SceneManager.LoadScene("Home");
+    }
+
+    public void LoadDisclaimer()
+    {
+        SceneManager.LoadScene("Disclaimer");
+    }
+
+    public void LoadPlayerCustomiser()
+    {
+        Debug.Log("Called");
+        SceneManager.LoadScene("CharacterCustomise");
+    }
+
+    public void LoadIntroduction()
+    {
+        SceneManager.LoadScene("Introduction");
     }
 
     public void Exit()
