@@ -110,4 +110,14 @@ public class PlayerData : MonoBehaviour
         shoes.GetComponent<Image>().color = selectedShoesColor;
     }
 
+    public void ConfirmSelection()
+    {
+        hairColor = selectedHairColor;
+        eyeColor = selectedEyeColor;
+        skinColor = selectedSkinColor;
+        trousersColor = selectedTrousersColor;
+        tshirtColor = selectedTshirtColor;
+        shoesColor  = selectedShoesColor;
+    }
+
 }
