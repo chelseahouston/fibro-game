@@ -796,7 +796,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1671155703
   m_SortingLayer: 6
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8443,7 +8443,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1671155703
   m_SortingLayer: 6
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18213,7 +18213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1671155703
   m_SortingLayer: 6
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -18289,7 +18289,7 @@ SpriteRenderer:
   m_SortingLayerID: -1671155703
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -191801333, guid: 39298255ae717ad4da4d8cf475b8ab16, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18297,7 +18297,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1735572653
@@ -20351,7 +20351,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 1.0018954
+      m_AnimationSpeed: 1.6027637
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
