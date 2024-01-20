@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
     public bool mailRead, mailDay;
     public string playerName;
     private TimeManager timeManager;
+    public PlayerData playerData;
+    public GameObject hair, trousers, eyes, shoes, tshirt, baseskin;
 
 
     private void Awake()
@@ -33,7 +36,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        playerName = "PineKone Studios";
+        SetPlayerCustomisation();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         SetStartingPositions();
@@ -42,6 +45,21 @@ public class Player : MonoBehaviour
         timeManager = GameObject.Find("DayTimePanel").GetComponent<TimeManager>();
         mailDay = false;
         mailRead = false;
+
+    }
+
+
+    public void SetPlayerCustomisation()
+    {
+        playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
+        playerName = playerData.playerName;
+        hair.GetComponent<SpriteRenderer>().color = playerData.hairColor;
+        trousers.GetComponent<SpriteRenderer>().color = playerData.trousersColor;
+        tshirt.GetComponent<SpriteRenderer>().color = playerData.tshirtColor;
+        eyes.GetComponent<SpriteRenderer>().color = playerData.eyeColor;
+        shoes.GetComponent<SpriteRenderer>().color = playerData.shoesColor;
+        baseskin.GetComponent<SpriteRenderer>().color = playerData.skinColor;
+
     }
 
     private void SetStartingPositions()

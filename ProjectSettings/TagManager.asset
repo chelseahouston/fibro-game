@@ -23,6 +23,12 @@ TagManager:
   - Social
   - Fun
   - MailBox
+  - EyeColor
+  - SkinColor
+  - HairColor
+  - TShirtColor
+  - TrousersColor
+  - ShoeColor
   layers:
   - Default
   - TransparentFX
