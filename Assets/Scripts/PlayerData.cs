@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerData : MonoBehaviour
 {
     private static PlayerData instance;
-    public InputField playerNameInput;
+    public TMP_InputField playerNameInput;
     public TextMeshProUGUI playerNameDisplay;
     public string playerName;
 

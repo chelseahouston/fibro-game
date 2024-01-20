@@ -6,11 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 { 
+    public PlayerData playerData;
 
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Home");
+        if (playerData.playerName != "")
+        {
+            SceneManager.LoadScene("Home");
+        }
+
+        
     }
 
     public void LoadDisclaimer()

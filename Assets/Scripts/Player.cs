@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         playerName = playerData.playerName;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
