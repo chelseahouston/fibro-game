@@ -29,6 +29,9 @@ TagManager:
   - TShirtColor
   - TrousersColor
   - ShoeColor
+  - HairArrow
+  - AccessoriesArrow
+  - BottomsArrow
   layers:
   - Default
   - TransparentFX

@@ -19,6 +19,12 @@ public class PlayerData : MonoBehaviour
 
     public Image characterBaseModel, hair, tshirt, trousers, eyes, shoes;
 
+    public Image[] hairs, accessories, bottoms;
+    public int hairInt, accessInt, bottomsInt;
+    public GameObject hairLA, hairRA, accessoriesLA, accessoriesRA, bottomsLA, bottomsRA; // selection arrows
+
+
+
     private void Awake()
     {
         // Ensure there is only one instance of the Player object
@@ -35,6 +41,23 @@ public class PlayerData : MonoBehaviour
     private void Start()
     {
         playerNameInput.onEndEdit.AddListener(SetPlayerName);
+
+        foreach (Image hair in hairs) {
+            hair.enabled = false;
+        }
+
+        foreach (Image bottom in bottoms)
+        {
+            bottom.enabled = false;
+        }
+
+        hairInt = 0;
+        bottomsInt = 0;
+        accessInt = 0;
+        hairs[hairInt].enabled = true;
+        hair = hairs[hairInt];
+        bottoms[bottomsInt].enabled = true;
+        trousers = bottoms[bottomsInt];
 
         //default colours
         selectedEyeColor = new Color(0.23f, 0.79f, 0.85f, 1);
@@ -118,6 +141,68 @@ public class PlayerData : MonoBehaviour
         trousersColor = selectedTrousersColor;
         tshirtColor = selectedTshirtColor;
         shoesColor  = selectedShoesColor;
+    }
+
+    public void arrowOnClick(GameObject arrow)
+    {
+        if(arrow.tag == "HairArrow")
+        {
+            if (arrow.name == "Right")
+            {
+                hairs[hairInt].enabled = false;
+                hairInt += 1;
+                if(hairInt == hairs.Length)
+                {
+                    hairInt = 0;
+                }
+                hair = hairs[hairInt];
+                hairs[hairInt].enabled = true;
+                hair.GetComponent<Image>().color = selectedHairColor;
+            }
+            else
+            {
+                hairs[hairInt].enabled = false;
+                hairInt -= 1;
+                if (hairInt < 0)
+                {
+                    hairInt = hairs.Length -1;
+                }
+                hair = hairs[hairInt];
+                hairs[hairInt].enabled = true;
+                hair.GetComponent<Image>().color = selectedHairColor;
+            }
+        }
+
+        if (arrow.tag == "BottomsArrow")
+        {
+            if (arrow.name == "Right")
+            {
+                bottoms[bottomsInt].enabled = false;
+                bottomsInt += 1;
+                if (bottomsInt == bottoms.Length)
+                {
+                    bottomsInt = 0;
+                }
+                trousers = bottoms[bottomsInt];
+                bottoms[bottomsInt].enabled = true;
+                trousers.GetComponent<Image>().color = selectedTrousersColor;
+            }
+            else
+            {
+                bottoms[bottomsInt].enabled = false;
+                bottomsInt -= 1;
+                if (bottomsInt < 0)
+                {
+                    bottomsInt = bottoms.Length -1;
+                }
+                trousers = bottoms[bottomsInt];
+                bottoms[bottomsInt].enabled = true;
+                trousers.GetComponent<Image>().color = selectedTrousersColor;
+            }
+        }
+
+
+
     }
 
 }
