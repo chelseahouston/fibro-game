@@ -151,7 +151,33 @@ public class Player : MonoBehaviour
 
     }
 
-    
+    private void DisableRenderersInChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            SpriteRenderer childRenderer = child.GetComponent<SpriteRenderer>();
+
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = false;
+            }
+        }
+    }
+
+    private void EnableRenderersInChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            SpriteRenderer childRenderer = child.GetComponent<SpriteRenderer>();
+
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = true;
+            }
+        }
+    }
+
+
 
     private void LeaveHomeScene(Collider2D thing)
     {
@@ -207,9 +233,8 @@ public class Player : MonoBehaviour
     IEnumerator LoadSceneAndSetPosition(string scene, Vector3 position)
     {
 
-        // disable the player's renderer component
-        Renderer rendererComponent = GetComponent<Renderer>();
-        rendererComponent.enabled = false;
+        // disable the player's renderer components
+        DisableRenderersInChildren();
         loadpanel.HideAllUI();
 
         SceneManager.LoadScene(scene);
@@ -220,7 +245,7 @@ public class Player : MonoBehaviour
         transform.position = position;
 
         // enable the renderer and collider component
-        rendererComponent.enabled = true;;
+        EnableRenderersInChildren();
 
     }
 
