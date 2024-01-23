@@ -17,11 +17,12 @@ public class PlayerData : MonoBehaviour
     public Color selectedEyeColor, selectedSkinColor, selectedHairColor, selectedTrousersColor, selectedTshirtColor, selectedShoesColor; // preview chosen colors
     public Color skinColor, eyeColor, hairColor, tshirtColor, trousersColor, shoesColor;
 
-    public Image characterBaseModel, hair, tshirt, trousers, eyes, shoes;
+    public Image characterBaseModel, hair, tshirt, trousers, eyes, shoes, glasses;
 
     public Image[] hairs, tshirts, skinbase, bottoms; // list of types of clothes
     public int hairInt, teeInt, bottomsInt; // number in the above list that's selected
     public GameObject hairLA, hairRA, accessoriesLA, accessoriesRA, bottomsLA, bottomsRA; // selection arrows
+    public Toggle glassesToggle;
 
     private void Awake()
     {
@@ -58,6 +59,10 @@ public class PlayerData : MonoBehaviour
         {
             tee.enabled = false;
         }
+
+        
+        glassesToggle.isOn = false;
+        glasses.enabled = false;
 
         hairInt = 0;
         bottomsInt = 0;
@@ -156,6 +161,18 @@ public class PlayerData : MonoBehaviour
         trousersColor = selectedTrousersColor;
         tshirtColor = selectedTshirtColor;
         shoesColor  = selectedShoesColor;
+    }
+
+    public void glassesOnClick()
+    {
+        if (glasses.enabled)
+        {
+            glasses.enabled = false;
+        }
+        else
+        {
+            glasses.enabled = true;
+        }
     }
 
     public void arrowOnClick(GameObject arrow)
