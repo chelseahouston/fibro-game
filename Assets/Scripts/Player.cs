@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private TimeManager timeManager;
     public PlayerData playerData;
     public GameObject hair, trousers, eyes, shoes, tshirt, baseskin;
-    public GameObject[] hairs, bottoms;
+    public GameObject[] hairs, bottoms, tshirts, skinbase;
 
 
     private void Awake()
@@ -47,6 +47,16 @@ public class Player : MonoBehaviour
             bottom.SetActive(false);
         }
 
+        foreach (GameObject skin in skinbase)
+        {
+            skin.SetActive(false);
+        }
+
+        foreach (GameObject tee in tshirts)
+        {
+            tee.SetActive(false);
+        }
+
         SetPlayerCustomisation();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -59,15 +69,18 @@ public class Player : MonoBehaviour
 
     }
 
-
     public void SetPlayerCustomisation()
     {
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         playerName = playerData.playerName;
         hair = hairs[playerData.hairInt];
         trousers = bottoms[playerData.bottomsInt];
+        tshirt = tshirts[playerData.teeInt];
+        baseskin = skinbase[playerData.teeInt];
         hair.SetActive(true);
         trousers.SetActive(true);
+        tshirt.SetActive(true);
+        baseskin.SetActive(true);
 
         hair.GetComponent<SpriteRenderer>().color = playerData.hairColor;
         trousers.GetComponent<SpriteRenderer>().color = playerData.trousersColor;

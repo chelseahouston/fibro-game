@@ -19,11 +19,9 @@ public class PlayerData : MonoBehaviour
 
     public Image characterBaseModel, hair, tshirt, trousers, eyes, shoes;
 
-    public Image[] hairs, accessories, bottoms;
-    public int hairInt, accessInt, bottomsInt;
+    public Image[] hairs, tshirts, skinbase, bottoms; // list of types of clothes
+    public int hairInt, teeInt, bottomsInt; // number in the above list that's selected
     public GameObject hairLA, hairRA, accessoriesLA, accessoriesRA, bottomsLA, bottomsRA; // selection arrows
-
-
 
     private void Awake()
     {
@@ -51,13 +49,30 @@ public class PlayerData : MonoBehaviour
             bottom.enabled = false;
         }
 
+        foreach (Image skin in skinbase)
+        {
+            skin.enabled = false;
+        }
+
+        foreach (Image tee in tshirts)
+        {
+            tee.enabled = false;
+        }
+
         hairInt = 0;
         bottomsInt = 0;
-        accessInt = 0;
+        teeInt = 0;
+
         hairs[hairInt].enabled = true;
         hair = hairs[hairInt];
+
         bottoms[bottomsInt].enabled = true;
         trousers = bottoms[bottomsInt];
+
+        tshirts[teeInt].enabled = true;
+        tshirt = tshirts[teeInt];
+        skinbase[teeInt].enabled = true;
+        characterBaseModel = skinbase[teeInt];
 
         //default colours
         selectedEyeColor = new Color(0.23f, 0.79f, 0.85f, 1);
@@ -198,6 +213,42 @@ public class PlayerData : MonoBehaviour
                 trousers = bottoms[bottomsInt];
                 bottoms[bottomsInt].enabled = true;
                 trousers.GetComponent<Image>().color = selectedTrousersColor;
+            }
+        }
+
+        if (arrow.tag == "TShirtArrow")
+        {
+            if (arrow.name == "Right")
+            {
+                tshirts[teeInt].enabled = false;
+                skinbase[teeInt].enabled = false;
+                teeInt += 1;
+                if (teeInt == tshirts.Length)
+                {
+                    teeInt = 0;
+                }
+                tshirt = tshirts[teeInt];
+                characterBaseModel = skinbase[teeInt];
+                tshirts[teeInt].enabled = true;
+                skinbase[teeInt].enabled = true;
+                tshirt.GetComponent<Image>().color = selectedTshirtColor;
+                characterBaseModel.GetComponent<Image>().color = selectedSkinColor;
+            }
+            else
+            {
+                tshirts[teeInt].enabled = false;
+                skinbase[teeInt].enabled = false;
+                teeInt -= 1;
+                if (teeInt < 0)
+                {
+                    teeInt = tshirts.Length - 1;
+                }
+                tshirt = tshirts[teeInt];
+                characterBaseModel = skinbase[teeInt];
+                tshirts[teeInt].enabled = true;
+                skinbase[teeInt].enabled = true;
+                tshirt.GetComponent<Image>().color = selectedHairColor;
+                characterBaseModel.GetComponent<Image>().color = selectedSkinColor;
             }
         }
 

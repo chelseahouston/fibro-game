@@ -30,8 +30,8 @@ TagManager:
   - TrousersColor
   - ShoeColor
   - HairArrow
-  - AccessoriesArrow
   - BottomsArrow
+  - TShirtArrow
   layers:
   - Default
   - TransparentFX
