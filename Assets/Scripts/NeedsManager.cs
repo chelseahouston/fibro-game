@@ -75,7 +75,6 @@ public class NeedsManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Needs Panel Found!");
             Initialize();
         }
     }

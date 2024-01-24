@@ -111,10 +111,6 @@ public class IncreaseNeeds : MonoBehaviour
                 item.needsManager = needsManager;
                 triggered = true;
             }
-            else
-            {
-                Debug.Log("No item matching game object");            
-            }
         }
     }
 

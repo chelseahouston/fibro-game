@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     public string playerName;
     private TimeManager timeManager;
     public PlayerData playerData;
-    public GameObject hair, trousers, eyes, shoes, tshirt, baseskin;
+    public GameObject hair, trousers, eyes, shoes, tshirt, baseskin, glasses;
+    public GameObject[] hairs, bottoms, tshirts, skinbase;
 
 
     private void Awake()
@@ -36,6 +37,28 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        foreach (GameObject hair in hairs)
+        {
+            hair.SetActive(false);
+        }
+
+        foreach (GameObject bottom in bottoms)
+        {
+            bottom.SetActive(false);
+        }
+
+        foreach (GameObject skin in skinbase)
+        {
+            skin.SetActive(false);
+        }
+
+        foreach (GameObject tee in tshirts)
+        {
+            tee.SetActive(false);
+        }
+
+        glasses.SetActive(false);
+
         SetPlayerCustomisation();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -48,23 +71,39 @@ public class Player : MonoBehaviour
 
     }
 
-
     public void SetPlayerCustomisation()
     {
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         playerName = playerData.playerName;
+
+        // player customisation from the player data
+        hair = hairs[playerData.hairInt];
+        trousers = bottoms[playerData.bottomsInt];
+        tshirt = tshirts[playerData.teeInt];
+        baseskin = skinbase[playerData.teeInt];
+
+        // set the appropriate GOs to active
+        hair.SetActive(true);
+        trousers.SetActive(true);
+        tshirt.SetActive(true);
+        baseskin.SetActive(true);
+        if (playerData.glassesEnabled)
+        {
+            glasses.SetActive(true);
+        }
+
+        // and set the correct colors
         hair.GetComponent<SpriteRenderer>().color = playerData.hairColor;
         trousers.GetComponent<SpriteRenderer>().color = playerData.trousersColor;
         tshirt.GetComponent<SpriteRenderer>().color = playerData.tshirtColor;
         eyes.GetComponent<SpriteRenderer>().color = playerData.eyeColor;
         shoes.GetComponent<SpriteRenderer>().color = playerData.shoesColor;
         baseskin.GetComponent<SpriteRenderer>().color = playerData.skinColor;
-
     }
 
     private void SetStartingPositions()
     {
-        // set starting positions
+        // set starting positions depending on which building entered/exited
         gameLoadPos = new Vector3(-21.5f, -15f, 0f);
         homePosition = new Vector3(-28.476f, -27.456f, 0f);
         shopPosition = new Vector3(-23.48f, -27.58f, 0f);
@@ -103,17 +142,13 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D thing)
     {
-
-        // Check if the collider is a trigger
+        // check if the collider is a trigger
         if (!thing.isTrigger)
         {
-            // Exit the method if the collider is not a trigger
+            // exit the method if the collider is not a trigger
             return;
         }
-
         sceneName = SceneManager.GetActiveScene().name;
-
-
         switch (sceneName)
         {
             case "Home":
@@ -132,10 +167,35 @@ public class Player : MonoBehaviour
                 LeaveMedicalCentreScene(thing);
                 break;
         }
-
     }
 
-    
+    private void DisableRenderersInChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            SpriteRenderer childRenderer = child.GetComponent<SpriteRenderer>();
+
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = false;
+            }
+        }
+    }
+
+    private void EnableRenderersInChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            SpriteRenderer childRenderer = child.GetComponent<SpriteRenderer>();
+
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = true;
+            }
+        }
+    }
+
+
 
     private void LeaveHomeScene(Collider2D thing)
     {
@@ -191,9 +251,8 @@ public class Player : MonoBehaviour
     IEnumerator LoadSceneAndSetPosition(string scene, Vector3 position)
     {
 
-        // disable the player's renderer component
-        Renderer rendererComponent = GetComponent<Renderer>();
-        rendererComponent.enabled = false;
+        // disable the player's renderer components
+        DisableRenderersInChildren();
         loadpanel.HideAllUI();
 
         SceneManager.LoadScene(scene);
@@ -204,7 +263,7 @@ public class Player : MonoBehaviour
         transform.position = position;
 
         // enable the renderer and collider component
-        rendererComponent.enabled = true;;
+        EnableRenderersInChildren();
 
     }
 
