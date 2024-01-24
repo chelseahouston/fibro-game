@@ -40,7 +40,6 @@ public class IncreaseNeeds : MonoBehaviour
         items.Add(new Item("Chair"));
         items.Add(new Item("Bench"));
         items.Add(new Item("Bed"));
-        items.Add(new Item("Computer"));
         items.Add(new Item("Fridge"));
         items.Add(new Item("Stove"));
 
@@ -48,14 +47,12 @@ public class IncreaseNeeds : MonoBehaviour
         // Bath Values
         items[0].SetNeedIncreaseValue("Hygiene", 100);
         items[0].SetNeedIncreaseValue("Pain", 70);
-        items[0].SetNeedIncreaseValue("Happiness", 50);
 
         // Toilet Values
         items[1].SetNeedIncreaseValue("Toilet", 110);
 
         // TV Values
         items[2].SetNeedIncreaseValue("Fun", 50);
-        items[2].SetNeedIncreaseValue("Happiness", 60);
 
         // Chair/Sofa Values
         items[3].SetNeedIncreaseValue("Fatigue", 40);
@@ -68,16 +65,11 @@ public class IncreaseNeeds : MonoBehaviour
         items[5].SetNeedIncreaseValue("Fatigue", 40);
         items[5].SetNeedIncreaseValue("Sleep", 90);
 
-        // Computer Values
-        items[6].SetNeedIncreaseValue("Social", 50);
-
         // Fridge Values
-        items[7].SetNeedIncreaseValue("Hunger", 60);
-        items[7].SetNeedIncreaseValue("Happiness", 30);
+        items[6].SetNeedIncreaseValue("Hunger", 60);
 
         // Stove Values
-        items[8].SetNeedIncreaseValue("Hunger", 90);
-        items[8].SetNeedIncreaseValue("Happiness", 30);
+        items[7].SetNeedIncreaseValue("Hunger", 90);
 
 
     }

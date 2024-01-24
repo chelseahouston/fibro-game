@@ -54,6 +54,12 @@ public class NeedsManager : MonoBehaviour
         if (timeSinceLastUpdate >= updateInterval)
         {
             DecreaseNeeds(); // pretty much always decreasing
+            if (loadpanel.mainSymptomsPanel.activeSelf) // if symptoms starting to show, increase their severity
+            {
+                InitializeSymptoms();
+                IncreaseSymptoms();
+            }
+            
             timeSinceLastUpdate = 0.0f;
         }
 
@@ -80,12 +86,12 @@ public class NeedsManager : MonoBehaviour
         }
         else
         {
-            Initialize();
+            InitializeNeeds();
         }
     }
 
 
-    void Initialize()
+    void InitializeNeeds()
     {
 
 
@@ -98,18 +104,20 @@ public class NeedsManager : MonoBehaviour
         needsList.Add(new Need("Toilet", 10, 110, 0.6f, needsBars[2]));
         needsList.Add(new Need("Hygiene", 10, 110, 0.4f, needsBars[3]));
         needsList.Add(new Need("Fun", 10, 110, 0.6f, needsBars[4]));
+        ResetNeeds();
+        
+        SceneSetup = true;
 
+    }
+
+    void InitializeSymptoms()
+    {
         // symptoms
         symptomsList.Clear();
         symptomsList.Add(new Symptom("Pain", 10, 100, 0.9f, needsBars[5]));
         symptomsList.Add(new Symptom("Fatigue", 10, 100, 0.8f, needsBars[6]));
         symptomsList.Add(new Symptom("Brain Fog", 10, 100, 0.6f, needsBars[7]));
-
-        ResetNeeds();
         ResetSymptoms();
-        
-        SceneSetup = true;
-
     }
 
 
@@ -134,13 +142,10 @@ public class NeedsManager : MonoBehaviour
         for (int i = 0; i < symptomsList.Count; i++)
         {
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
-            thisBar.SetValue(110); // set as new current value
-            currentLevels.Add(symptomsList[i].maxLevel); // add to current values list
+            thisBar.SetValue(10); // set as new current value
+            currentSymptomLevels.Add(symptomsList[i].minLevel); // add to current values list
             // all needs are now at maximum levels
         }
-
-        loadpanel.HideNeeds();
-        loadpanel.HideSymptoms();
 
     }
 
@@ -159,16 +164,16 @@ public class NeedsManager : MonoBehaviour
         }
     }
 
-    public void DecreaseSymptoms()
+    public void IncreaseSymptoms()
     {
 
-        for (int i = 0; i < needsList.Count; i++)
+        for (int i = 0; i < symptomsList.Count; i++)
         {
-            currentSymptomLevels[i] -= symptomsList[i].decreaseRate;
+            currentSymptomLevels[i] += symptomsList[i].decreaseRate;
 
-            if (currentSymptomLevels[i] < symptomsList[i].minLevel)
+            if (currentSymptomLevels[i] > symptomsList[i].maxLevel)
             {
-                currentSymptomLevels[i] = symptomsList[i].minLevel;
+                currentSymptomLevels[i] = symptomsList[i].maxLevel;
             }
         }
     }
@@ -212,18 +217,18 @@ public class NeedsManager : MonoBehaviour
             }
     }
 
-    public void IncreaseSymptoms(string name, int increaseRate)
+    public void DecreaseSymptoms(string name, int decreaseRate)
     {
-        Debug.Log("Increasing " + name);
+        Debug.Log("Decreasing " + name);
 
         int index = GetSymptomLocationByName(name);
         Symptom symptom = symptomsList[index];
 
         BarFill thisBar = needsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
-        currentSymptomLevels[index] += increaseRate; // new value is current plus this need's increasing value
-        if (currentSymptomLevels[index] > symptom.maxLevel)
+        currentSymptomLevels[index] += decreaseRate; // new value is current plus this need's increasing value
+        if (currentSymptomLevels[index] < symptom.minLevel)
         {
-            currentSymptomLevels[index] = symptom.maxLevel;
+            currentSymptomLevels[index] = symptom.minLevel;
         }
     }
 

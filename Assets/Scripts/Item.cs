@@ -7,6 +7,7 @@ using static UnityEditor.Progress;
 public class Item
 {
     public Dictionary<string, int> needIncreases;
+    public Dictionary<string, int> symptomDecreases;
     public NeedsManager needsManager;
     public string itemName;
 
@@ -19,6 +20,12 @@ public class Item
     public void SetNeedIncreaseValue(string need, int value)
     {
         needIncreases.Add(need, value);
+
+    }
+
+    public void SetSymptomDecreaseValue(string symptom, int value)
+    {
+        symptomDecreases.Add(symptom, value);
 
     }
 
@@ -35,6 +42,27 @@ public class Item
                 KeyValuePair<string, int> need = GetElementAtIndex(needIncreases, i);
                 int increaseValue = need.Value;
                 needsManager.IncreaseNeeds(need.Key, increaseValue);
+            }
+        }
+        else
+        {
+            Debug.LogError("NeedsManager not assigned to Item: " + itemName);
+        }
+    }
+
+    public void DecreaseSymptom()
+    {
+
+        if (needsManager != null)
+        {
+
+            Debug.Log("symptom to increase: " + symptomDecreases.Count);
+            for (int i = 0; i < symptomDecreases.Count; i++)
+            {
+                Debug.Log("Decreasing symptoms for " + itemName);
+                KeyValuePair<string, int> symptom= GetElementAtIndex(symptomDecreases, i);
+                int decreaseValue = symptom.Value;
+                needsManager.DecreaseSymptoms(symptom.Key, decreaseValue);
             }
         }
         else

@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class Symptom
 {
-    public string needName;
+    public string symptomName;
     public float minLevel;
     public float maxLevel;
     public float decreaseRate;
@@ -13,7 +13,7 @@ public class Symptom
 
     public Symptom(string name, float minLevel, float maxLevel, float decreaseRate, GameObject bar)
     {
-        this.needName = name;
+        this.symptomName = name;
         this.minLevel = minLevel;
         this.maxLevel = maxLevel;
         this.decreaseRate = decreaseRate;

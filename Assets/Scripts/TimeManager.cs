@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,11 +22,14 @@ public class TimeManager : MonoBehaviour
 
     public List<int> mailDays = new List<int>(); // days user gets mail
 
-    private const float realTimePerGame15Minute = 5f; // increase by 15 minutes every 5 seconds real time
+    private const float realTimePerGame15Minute = 1f; // increase by 15 minutes every 5 seconds real time
 
+    private int symptomStartDate, symptomStartMonth;
+    public LoadPanel loadPanel;
 
     void Start()
     {
+
         InitializeGameTime();
         UpdateUI();
         InvokeRepeating("ProgressTime", 0f, realTimePerGame15Minute);
@@ -39,6 +43,16 @@ public class TimeManager : MonoBehaviour
         currentDate = 1;
         currentMonth = 1;
         currentYear = 1;
+        symptomStartDate = 2;
+        symptomStartMonth = 1;
+    }
+
+    private void Update()
+    {
+        if (checkTriggerSymptomsUI())
+        {
+            loadPanel.SymptomTime();
+        }
     }
 
     public int GetCurentDate()
@@ -61,7 +75,6 @@ public class TimeManager : MonoBehaviour
     void ProgressDate()
     {
         currentDate++;
-
         if (currentDate > 28)
         {
             currentDate = 1;
@@ -141,6 +154,18 @@ public class TimeManager : MonoBehaviour
         }
         else { 
             return false; 
+        }
+    }
+
+    public bool checkTriggerSymptomsUI()
+    {
+        if (currentMonth == symptomStartMonth & currentDate == symptomStartDate) 
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

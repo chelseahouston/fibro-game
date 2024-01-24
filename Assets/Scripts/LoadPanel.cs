@@ -8,13 +8,20 @@ public class LoadPanel : MonoBehaviour
     public GameObject SymptomsPanel;
     public GameObject calendarPanel;
     public NeedsManager needsManager;
+    public GameObject mainSymptomsPanel;
 
 
     private void Start() 
     { 
         HideCalendar();
-        HideSymptoms();
-        needsManager = GameObject.Find("NeedsManager").GetComponent<NeedsManager>();    
+        mainSymptomsPanel.SetActive(false);
+        SymptomsPanel.SetActive(false);
+    }
+
+    public void SymptomTime()
+    {
+        mainSymptomsPanel.SetActive(true);
+        SymptomsPanel.SetActive(false);
     }
 
 
