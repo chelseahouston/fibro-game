@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
             tee.SetActive(false);
         }
 
+        glasses.SetActive(false);
+
         SetPlayerCustomisation();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour
         trousers.SetActive(true);
         tshirt.SetActive(true);
         baseskin.SetActive(true);
-        if (playerData.glasses.enabled)
+        if (playerData.glassesEnabled)
         {
             glasses.SetActive(true);
         }

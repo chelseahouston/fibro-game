@@ -23,6 +23,7 @@ public class PlayerData : MonoBehaviour
     public int hairInt, teeInt, bottomsInt; // number in the above list that's selected
     public GameObject hairLA, hairRA, accessoriesLA, accessoriesRA, bottomsLA, bottomsRA; // selection arrows
     public Toggle glassesToggle;
+    public bool glassesEnabled;
 
     private void Awake()
     {
@@ -63,6 +64,7 @@ public class PlayerData : MonoBehaviour
         
         glassesToggle.isOn = false;
         glasses.enabled = false;
+        glassesEnabled = false;
 
         hairInt = 0;
         bottomsInt = 0;
@@ -161,6 +163,7 @@ public class PlayerData : MonoBehaviour
         trousersColor = selectedTrousersColor;
         tshirtColor = selectedTshirtColor;
         shoesColor  = selectedShoesColor;
+        Debug.Log("Glasses enabled = " + glassesEnabled);
     }
 
     public void glassesOnClick()
@@ -168,10 +171,12 @@ public class PlayerData : MonoBehaviour
         if (glasses.enabled)
         {
             glasses.enabled = false;
+            glassesEnabled = false;
         }
         else
         {
             glasses.enabled = true;
+            glassesEnabled = true;
         }
     }
 
