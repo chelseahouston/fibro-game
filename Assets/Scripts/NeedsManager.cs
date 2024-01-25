@@ -9,11 +9,10 @@ public class NeedsManager : MonoBehaviour
 {
     public List<Need> needsList = new List<Need>();
     [SerializeField] public List<GameObject> needsBars = new List<GameObject>();
+    private List<float> currentLevels = new List<float>();
 
     public List<Symptom> symptomsList = new List<Symptom>();
     [SerializeField] public List<GameObject> symptomsBars = new List<GameObject>();
-
-    private List<float> currentLevels = new List<float>();
     private List<float> currentSymptomLevels = new List<float>();
 
     private float updateInterval = 1.0f;
@@ -21,11 +20,8 @@ public class NeedsManager : MonoBehaviour
 
     public LoadPanel loadpanel;
     public GameObject UI, needsPanel;
-
     public SceneChangeDetector sceneChangeDetector;
     public bool SceneSetup;
-
-
     private static NeedsManager instance;
 
 
@@ -42,6 +38,7 @@ public class NeedsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         sceneChangeDetector = GameObject.Find("SceneChangeDetector").GetComponent<SceneChangeDetector>();
 
     }
@@ -54,6 +51,7 @@ public class NeedsManager : MonoBehaviour
         if (timeSinceLastUpdate >= updateInterval)
         {
             DecreaseNeeds(); // pretty much always decreasing
+
             if (loadpanel.mainSymptomsPanel.activeSelf) // if symptoms starting to show, increase their severity
             {
                 IncreaseSymptoms();
@@ -65,12 +63,16 @@ public class NeedsManager : MonoBehaviour
         if (sceneChangeDetector.sceneChanged && !SceneSetup)
         {
             Instantiate();
-            InitializeSymptoms();
         }
 
         if (SceneSetup && needsPanel.activeSelf)
         {
             ShowNeeds();
+        }
+
+        if (loadpanel.SymptomsPanel.activeSelf)
+        {
+            ShowSymptoms();
         }
     }
 
@@ -87,16 +89,14 @@ public class NeedsManager : MonoBehaviour
         else
         {
             InitializeNeeds();
+            InitializeSymptoms();
         }
     }
 
 
     void InitializeNeeds()
     {
-
-
         // initialise list of needs and their values
-        
         needsList.Clear();
         currentLevels.Clear();
         needsList.Add(new Need("Hunger", 10, 110, 0.4f, needsBars[0]));
@@ -179,6 +179,9 @@ public class NeedsManager : MonoBehaviour
             {
                 currentSymptomLevels[i] = symptomsList[i].maxLevel;
             }
+
+            Debug.Log(symptomsList[i].symptomName + " level is at " + currentSymptomLevels[i]);
+            
         }
     }
 
@@ -201,6 +204,7 @@ public class NeedsManager : MonoBehaviour
             ;
             BarFill thisBar = symptomsBars[i].GetComponent<BarFill>();
             thisBar.SetValue(currentSymptomLevels[i]); // set as new current valsue for each bar and show
+            Debug.Log(symptomsList[i] + " bar value is " + thisBar.GetValue());
             i++; // continue iterations
         }
     }
@@ -234,6 +238,7 @@ public class NeedsManager : MonoBehaviour
         {
             currentSymptomLevels[index] = symptom.minLevel;
         }
+
     }
 
     public int GetNeedLocationByName(string name) {

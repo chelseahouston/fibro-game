@@ -6,17 +6,16 @@ public class Symptom
     public string symptomName;
     public float minLevel;
     public float maxLevel;
-    public float decreaseRate;
     public float increaseRate;
     public GameObject bar;
     public float currentValue;
 
-    public Symptom(string name, float minLevel, float maxLevel, float decreaseRate, GameObject bar)
+    public Symptom(string name, float minLevel, float maxLevel, float increaseRate, GameObject bar)
     {
         this.symptomName = name;
         this.minLevel = minLevel;
         this.maxLevel = maxLevel;
-        this.decreaseRate = decreaseRate;
+        this.increaseRate = increaseRate;
         this.bar = bar;
     }
 }

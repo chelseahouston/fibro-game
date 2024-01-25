@@ -7,7 +7,6 @@ public class Need
     public float minLevel;
     public float maxLevel;
     public float decreaseRate;
-    public float increaseRate;
     public GameObject bar;
     public float currentValue;
 

@@ -19,6 +19,12 @@ public class BarFill : MonoBehaviour
     {
         CurrentValue = Mathf.Clamp(value, 0, maxValue);
         fill.fillAmount = CurrentValue / maxValue;
+        
+    }
+
+    public float GetValue()
+    {
+        return CurrentValue;
     }
 
 
