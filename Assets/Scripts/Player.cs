@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     public Vector3 outsideHomePos, outsideShopPos, outsideCommPosition, outsideMedPos; // player's outside positions
     public string sceneName;
     public LoadPanel loadpanel;
-    public bool mailRead, mailDay;
+    public bool mailRead, mailDay, symptomsTriggerDay, symptomsHaveShown;
     public string playerName;
     private TimeManager timeManager;
     public PlayerData playerData;
@@ -68,6 +69,8 @@ public class Player : MonoBehaviour
         timeManager = GameObject.Find("DayTimePanel").GetComponent<TimeManager>();
         mailDay = false;
         mailRead = false;
+        symptomsTriggerDay = false;
+        symptomsHaveShown = false;
 
     }
 
@@ -136,6 +139,12 @@ public class Player : MonoBehaviour
         else
         {
             mailDay = false;
+        }
+
+        if (timeManager.checkTriggerSymptomsUI() & !symptomsHaveShown)
+        {
+            loadpanel.SymptomTime();
+            symptomsHaveShown = true;
         }
 
     }

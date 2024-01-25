@@ -1,21 +1,21 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Need
+public class Symptom
 {
-    public string needName;
+    public string symptomName;
     public float minLevel;
     public float maxLevel;
-    public float decreaseRate;
+    public float increaseRate;
     public GameObject bar;
     public float currentValue;
 
-    public Need(string name, float minLevel, float maxLevel, float decreaseRate, GameObject bar)
+    public Symptom(string name, float minLevel, float maxLevel, float increaseRate, GameObject bar)
     {
-        this.needName = name;
+        this.symptomName = name;
         this.minLevel = minLevel;
         this.maxLevel = maxLevel;
-        this.decreaseRate = decreaseRate;
+        this.increaseRate = increaseRate;
         this.bar = bar;
     }
 }

@@ -5,27 +5,32 @@ using UnityEngine;
 public class LoadPanel : MonoBehaviour
 {
     public GameObject needsPanel;
-    public GameObject tasksPanel;
+    public GameObject SymptomsPanel;
     public GameObject calendarPanel;
     public NeedsManager needsManager;
+    public GameObject mainSymptomsPanel;
 
 
     private void Start() 
     { 
         HideCalendar();
-        HideTasks();
-        needsManager = GameObject.Find("NeedsManager").GetComponent<NeedsManager>();    
+        mainSymptomsPanel.SetActive(false);
+    }
+
+    public void SymptomTime()
+    {
+        mainSymptomsPanel.SetActive(true);
     }
 
 
-    public void ShowTasks()
+    public void ShowSymptoms()
     {
-        tasksPanel.SetActive(true);
+        SymptomsPanel.SetActive(true);
     }
 
-    public void HideTasks()
+    public void HideSymptoms()
     {
-        tasksPanel.SetActive(false);
+        SymptomsPanel.SetActive(false);
     }
 
     public void ShowNeeds()
@@ -61,15 +66,15 @@ public class LoadPanel : MonoBehaviour
         }
     }
 
-    public void OnTasksClick()
+    public void OnSymptomsClick()
     {
-        if (tasksPanel.activeSelf)
+        if (SymptomsPanel.activeSelf)
         {
-            HideTasks();
+            HideSymptoms();
         }
         else
         {
-            ShowTasks();
+            ShowSymptoms();
         }
     }
 
@@ -87,7 +92,7 @@ public class LoadPanel : MonoBehaviour
 
     public void HideAllUI()
     {
-        HideTasks();
+        HideSymptoms();
         HideNeeds();
         HideCalendar();
     }
