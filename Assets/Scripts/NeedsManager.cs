@@ -11,7 +11,7 @@ public class NeedsManager : MonoBehaviour
     [SerializeField] public List<GameObject> needsBars = new List<GameObject>();
 
     public List<Symptom> symptomsList = new List<Symptom>();
-    [SerializeField] public List<GameObject> stymptomsBars = new List<GameObject>();
+    [SerializeField] public List<GameObject> symptomsBars = new List<GameObject>();
 
     private List<float> currentLevels = new List<float>();
     private List<float> currentSymptomLevels = new List<float>();
@@ -56,7 +56,6 @@ public class NeedsManager : MonoBehaviour
             DecreaseNeeds(); // pretty much always decreasing
             if (loadpanel.mainSymptomsPanel.activeSelf) // if symptoms starting to show, increase their severity
             {
-                InitializeSymptoms();
                 IncreaseSymptoms();
             }
             
@@ -66,6 +65,7 @@ public class NeedsManager : MonoBehaviour
         if (sceneChangeDetector.sceneChanged && !SceneSetup)
         {
             Instantiate();
+            InitializeSymptoms();
         }
 
         if (SceneSetup && needsPanel.activeSelf)
@@ -112,11 +112,12 @@ public class NeedsManager : MonoBehaviour
 
     void InitializeSymptoms()
     {
+        Debug.Log("Initialising Symptoms...");
         // symptoms
         symptomsList.Clear();
-        symptomsList.Add(new Symptom("Pain", 10, 100, 0.9f, needsBars[5]));
-        symptomsList.Add(new Symptom("Fatigue", 10, 100, 0.8f, needsBars[6]));
-        symptomsList.Add(new Symptom("Brain Fog", 10, 100, 0.6f, needsBars[7]));
+        symptomsList.Add(new Symptom("Pain", 10, 100, 0.9f, symptomsBars[0]));
+        symptomsList.Add(new Symptom("Fatigue", 10, 100, 0.8f, symptomsBars[1]));
+        symptomsList.Add(new Symptom("Brain Fog", 10, 100, 0.6f, symptomsBars[2]));
         ResetSymptoms();
     }
 
@@ -127,7 +128,7 @@ public class NeedsManager : MonoBehaviour
         for (int i = 0; i < needsList.Count; i++)
         {
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
-            thisBar.SetValue(110); // set as new current value
+            thisBar.SetValue(needsList[i].maxLevel); // set as new current value
             currentLevels.Add(needsList[i].maxLevel); // add to current values list
             // all needs are now at maximum levels
         }
@@ -141,10 +142,13 @@ public class NeedsManager : MonoBehaviour
 
         for (int i = 0; i < symptomsList.Count; i++)
         {
-            BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
-            thisBar.SetValue(10); // set as new current value
+
+            BarFill thisBar = symptomsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
+            thisBar.SetValue(symptomsList[i].minLevel); // set as new current value
             currentSymptomLevels.Add(symptomsList[i].minLevel); // add to current values list
             // all symptoms are now at minimum levels
+
+            loadpanel.HideSymptoms();
         }
 
     }
@@ -166,10 +170,10 @@ public class NeedsManager : MonoBehaviour
 
     public void IncreaseSymptoms()
     {
-
+        Debug.Log("Increasing Symptoms...");
         for (int i = 0; i < symptomsList.Count; i++)
         {
-            currentSymptomLevels[i] += symptomsList[i].decreaseRate;
+            currentSymptomLevels[i] += symptomsList[i].increaseRate;
 
             if (currentSymptomLevels[i] > symptomsList[i].maxLevel)
             {
@@ -195,7 +199,7 @@ public class NeedsManager : MonoBehaviour
         foreach (Symptom symptom in symptomsList)
         {
             ;
-            BarFill thisBar = needsBars[i].GetComponent<BarFill>();
+            BarFill thisBar = symptomsBars[i].GetComponent<BarFill>();
             thisBar.SetValue(currentSymptomLevels[i]); // set as new current valsue for each bar and show
             i++; // continue iterations
         }
@@ -224,7 +228,7 @@ public class NeedsManager : MonoBehaviour
         int index = GetSymptomLocationByName(name);
         Symptom symptom = symptomsList[index];
 
-        BarFill thisBar = needsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
+        BarFill thisBar = symptomsBars[index].GetComponent<BarFill>(); // get the bar fill for this need
         currentSymptomLevels[index] += decreaseRate; // new value is current plus this need's increasing value
         if (currentSymptomLevels[index] < symptom.minLevel)
         {

@@ -15,7 +15,6 @@ public class LoadPanel : MonoBehaviour
     { 
         HideCalendar();
         mainSymptomsPanel.SetActive(false);
-        SymptomsPanel.SetActive(false);
     }
 
     public void SymptomTime()

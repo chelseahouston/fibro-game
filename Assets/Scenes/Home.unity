@@ -264,7 +264,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41a64217d468ec2488a8e17cd81c56d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b628ddabaf496b4ba3919281b086cbb, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41a64217d468ec2488a8e17cd81c56d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b628ddabaf496b4ba3919281b086cbb, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1836,7 +1836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 38.083336}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291466309
@@ -2736,7 +2736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 53.083336, y: -24.823315}
+  m_AnchoredPosition: {x: 53.083344, y: -24.823315}
   m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326924206
@@ -3666,7 +3666,6 @@ MonoBehaviour:
   calendarPanel: {fileID: 1168008624}
   needsManager: {fileID: 506740417}
   mainSymptomsPanel: {fileID: 1776450623}
-  SymptomsPanelActive: 0
 --- !u!1 &447390190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,7 +3775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 37.823345}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462505734
@@ -4093,7 +4092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 37.916656}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504862200
@@ -4319,11 +4318,11 @@ MonoBehaviour:
   - {fileID: 540731951}
   - {fileID: 693143397}
   - {fileID: 1263427076}
+  symptomsList: []
+  symptomsBars:
   - {fileID: 2091477504}
   - {fileID: 1013524539}
   - {fileID: 1170867752}
-  symptomsList: []
-  stymptomsBars: []
   loadpanel: {fileID: 446046994}
   UI: {fileID: 446046992}
   needsPanel: {fileID: 593975358}
@@ -6240,7 +6239,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 38}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696661860
@@ -6397,7 +6396,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 41a64217d468ec2488a8e17cd81c56d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b628ddabaf496b4ba3919281b086cbb, type: 3}
   m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -6449,7 +6448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 38}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704979548
@@ -11208,7 +11207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.800008, y: 38.25}
+  m_AnchoredPosition: {x: -14.800008, y: 37.916668}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350360967
@@ -14582,7 +14581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 37.990013}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425195252
@@ -19218,7 +19217,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 4.85188
+      m_AnimationSpeed: 2.1034849
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -20658,7 +20657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.799999, y: 38.416668}
+  m_AnchoredPosition: {x: -14.799999, y: 37.9067}
   m_SizeDelta: {x: 30, y: 6.8229}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128513558
