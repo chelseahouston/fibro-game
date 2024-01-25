@@ -144,7 +144,7 @@ public class NeedsManager : MonoBehaviour
             BarFill thisBar = needsBars[i].GetComponent<BarFill>(); // get the bar fill for this need
             thisBar.SetValue(10); // set as new current value
             currentSymptomLevels.Add(symptomsList[i].minLevel); // add to current values list
-            // all needs are now at maximum levels
+            // all symptoms are now at minimum levels
         }
 
     }

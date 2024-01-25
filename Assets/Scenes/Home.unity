@@ -619,6 +619,7 @@ GameObject:
   - component: {fileID: 158310539}
   - component: {fileID: 158310541}
   - component: {fileID: 158310540}
+  - component: {fileID: 158310542}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -683,6 +684,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158310538}
   m_CullTransparentMesh: 1
+--- !u!114 &158310542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158310538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnSymptomsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &159617241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1390,7 @@ GameObject:
   - component: {fileID: 247480186}
   - component: {fileID: 247480188}
   - component: {fileID: 247480187}
+  - component: {fileID: 247480189}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -1424,6 +1455,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247480185}
   m_CullTransparentMesh: 1
+--- !u!114 &247480189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247480185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnSymptomsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &263748624
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,8 +2736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 53.083336, y: -25.416645}
-  m_SizeDelta: {x: 40, y: 80}
+  m_AnchoredPosition: {x: 53.083336, y: -24.823315}
+  m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326924206
 MonoBehaviour:
@@ -3606,6 +3666,7 @@ MonoBehaviour:
   calendarPanel: {fileID: 1168008624}
   needsManager: {fileID: 506740417}
   mainSymptomsPanel: {fileID: 1776450623}
+  SymptomsPanelActive: 0
 --- !u!1 &447390190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,7 +3909,6 @@ RectTransform:
   - {fileID: 2109291268}
   - {fileID: 1709905024}
   - {fileID: 593975359}
-  - {fileID: 1788474542}
   m_Father: {fileID: 1182454300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5295,6 +5355,7 @@ GameObject:
   - component: {fileID: 549560779}
   - component: {fileID: 549560778}
   - component: {fileID: 549560780}
+  - component: {fileID: 549560781}
   m_Layer: 5
   m_Name: SymptomTMP
   m_TagString: Untagged
@@ -5434,7 +5495,32 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnSymptomsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &549560781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549560776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &570952471
 GameObject:
   m_ObjectHideFlags: 0
@@ -15661,6 +15747,7 @@ GameObject:
   - component: {fileID: 1572232053}
   - component: {fileID: 1572232055}
   - component: {fileID: 1572232054}
+  - component: {fileID: 1572232056}
   m_Layer: 5
   m_Name: Panel1
   m_TagString: Untagged
@@ -15725,49 +15812,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572232052}
   m_CullTransparentMesh: 1
---- !u!1 &1586973300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1586973301}
-  - component: {fileID: 1586973302}
-  m_Layer: 5
-  m_Name: SymptomsClicker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1586973301
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586973300}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1776450624}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.083, y: 1.0833}
-  m_SizeDelta: {x: 40.167, y: 16}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1586973302
+--- !u!114 &1572232056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586973300}
+  m_GameObject: {fileID: 1572232052}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
@@ -15780,7 +15831,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 446046994}
           m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
-          m_MethodName: OnSymptomsClick
+          m_MethodName: OnNeedsClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -16637,6 +16688,7 @@ GameObject:
   - component: {fileID: 1693409406}
   - component: {fileID: 1693409408}
   - component: {fileID: 1693409407}
+  - component: {fileID: 1693409409}
   m_Layer: 5
   m_Name: Panel3
   m_TagString: Untagged
@@ -16701,6 +16753,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693409405}
   m_CullTransparentMesh: 1
+--- !u!114 &1693409409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693409405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnSymptomsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1695063102
 GameObject:
   m_ObjectHideFlags: 0
@@ -17002,7 +17083,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnNeedsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1731045112
 GameObject:
   m_ObjectHideFlags: 0
@@ -17491,7 +17584,6 @@ RectTransform:
   - {fileID: 158310539}
   - {fileID: 1693409406}
   - {fileID: 549560777}
-  - {fileID: 1586973301}
   m_Father: {fileID: 1182454300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -17658,71 +17750,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779963368}
   m_CullTransparentMesh: 1
---- !u!1 &1788474541
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1788474542}
-  - component: {fileID: 1788474543}
-  m_Layer: 5
-  m_Name: NeedsClicker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1788474542
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788474541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 483609757}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -18.166655, y: 46.59121}
-  m_SizeDelta: {x: 41.3257, y: 16}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1788474543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788474541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 446046994}
-          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
-          m_MethodName: OnNeedsClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1837552880
 GameObject:
   m_ObjectHideFlags: 0
@@ -18211,6 +18238,7 @@ GameObject:
   - component: {fileID: 1900192727}
   - component: {fileID: 1900192729}
   - component: {fileID: 1900192728}
+  - component: {fileID: 1900192730}
   m_Layer: 5
   m_Name: Panel2
   m_TagString: Untagged
@@ -18275,6 +18303,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900192726}
   m_CullTransparentMesh: 1
+--- !u!114 &1900192730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900192726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnNeedsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1952107682
 GameObject:
   m_ObjectHideFlags: 0
@@ -19161,7 +19218,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 2.2931216
+      m_AnimationSpeed: 4.85188
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -20339,6 +20396,7 @@ GameObject:
   - component: {fileID: 2109291268}
   - component: {fileID: 2109291270}
   - component: {fileID: 2109291269}
+  - component: {fileID: 2109291271}
   m_Layer: 5
   m_Name: Panel3
   m_TagString: Untagged
@@ -20403,6 +20461,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109291267}
   m_CullTransparentMesh: 1
+--- !u!114 &2109291271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109291267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 446046994}
+          m_TargetAssemblyTypeName: LoadPanel, Assembly-CSharp
+          m_MethodName: OnNeedsClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2123588548
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ public class LoadPanel : MonoBehaviour
     public void SymptomTime()
     {
         mainSymptomsPanel.SetActive(true);
-        SymptomsPanel.SetActive(false);
     }
 
 
