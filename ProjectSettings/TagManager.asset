@@ -32,6 +32,7 @@ TagManager:
   - HairArrow
   - BottomsArrow
   - TShirtArrow
+  - Computer
   layers:
   - Default
   - TransparentFX
