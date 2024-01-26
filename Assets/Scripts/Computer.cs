@@ -2,21 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Computer : MonoBehaviour
 {
     public bool on, logIn;
     public Animator animator;
     public GameObject computerPopup, startButton;
-    public TextMeshProUGUI logintext;
+    public GameObject loginButton;
     public Sprite currentSprite, desktopSprite, startButtonSprite;
+    public Texture2D cursorTexture;
 
     // Start is called before the first frame update
     void Start()
     {
         on = false;
         logIn = false;
-        logintext.enabled = false;
+        loginButton.SetActive(false);
         computerPopup.SetActive(false);
         startButton.SetActive(false);
         SetSprites();
@@ -24,16 +26,14 @@ public class Computer : MonoBehaviour
 
     private void SetSprites()
     {
-        currentSprite = GetComponent<Sprite>();
-        desktopSprite = Resources.Load<Sprite>("Sprites/minigames/work11");
-        startButtonSprite = Resources.Load<Sprite>("Sprites/minigames/work12");
+        currentSprite = GetComponent<Image>().sprite;
     }
 
     // start computer on E key down
     public void StartComputer()
     {
         computerPopup.SetActive(true);
-        logintext.enabled = false;
+        loginButton.SetActive(false);
         startButton.SetActive(false);
     }
 
@@ -41,13 +41,13 @@ public class Computer : MonoBehaviour
     public void TurnedOnComputer(AnimationEvent animationEvent)
     {
         animator.SetBool("on", true);
-        logintext.enabled = true;
+        loginButton.SetActive(true);
     }
 
     // click login button to start login animation
     public void loginButtonClick()
     {
-        logintext.enabled = false;
+        loginButton.SetActive(false);
         animator.SetBool("logIn", true);
     }
 
@@ -57,18 +57,32 @@ public class Computer : MonoBehaviour
         animator.SetBool("logIn", false);
         currentSprite = desktopSprite;
         startButton.SetActive(true);
+        currentSprite = desktopSprite;
     }
 
     public void OnStartBarClick()
     {
+        Debug.Log("start button clicked");
         if (currentSprite != startButtonSprite)
         {
             currentSprite = startButtonSprite;
+            Debug.Log("showing start menu");
         }
-        if (currentSprite == startButtonSprite)
+        else if (currentSprite == startButtonSprite)
         {
             currentSprite = desktopSprite;
+            Debug.Log("closing start menu");
         }
+    }
+
+    public void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
 
