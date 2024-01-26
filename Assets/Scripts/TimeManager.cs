@@ -22,7 +22,7 @@ public class TimeManager : MonoBehaviour
 
     public List<int> mailDays = new List<int>(); // days user gets mail
 
-    private const float realTimePerGame15Minute = 0.3f; // increase by 15 minutes every 5 seconds real time
+    private const float realTimePerGame15Minute = 5f; // increase by 15 minutes every 5 seconds real time
 
     private int symptomStartDate, symptomStartMonth;
     public LoadPanel loadPanel;
@@ -43,7 +43,7 @@ public class TimeManager : MonoBehaviour
         currentDate = 1;
         currentMonth = 1;
         currentYear = 1;
-        symptomStartDate = 2;
+        symptomStartDate = 3;
         symptomStartMonth = 1;
     }
 

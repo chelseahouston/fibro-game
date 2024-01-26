@@ -9,9 +9,11 @@ public class Computer : MonoBehaviour
     public bool on, logIn;
     public Animator animator;
     public GameObject computerPopup, startButton;
-    public GameObject loginButton;
-    public Sprite currentSprite, desktopSprite, startButtonSprite;
+    public GameObject loginButton, startMenu;
+    public Sprite currentSprite, desktopSprite;
     public Texture2D cursorTexture;
+    public GameObject bin, binOutline, work, workOutline, usernameOb;
+    public TextMeshProUGUI username;
 
     // Start is called before the first frame update
     void Start()
@@ -21,15 +23,15 @@ public class Computer : MonoBehaviour
         loginButton.SetActive(false);
         computerPopup.SetActive(false);
         startButton.SetActive(false);
-        SetSprites();
-    }
-
-    private void SetSprites()
-    {
         currentSprite = GetComponent<Image>().sprite;
+        startMenu.SetActive(false);
+        bin.SetActive(false);
+        work.SetActive(false);
+        usernameOb.SetActive(false);
     }
 
-    // start computer on E key down
+
+        // start computer on E key down
     public void StartComputer()
     {
         computerPopup.SetActive(true);
@@ -41,7 +43,11 @@ public class Computer : MonoBehaviour
     public void TurnedOnComputer(AnimationEvent animationEvent)
     {
         animator.SetBool("on", true);
+        username.enabled=true;
+        username.text = GameObject.Find("Player").GetComponent<Player>().playerName;
+        Debug.Log("Player name = " + username.text);
         loginButton.SetActive(true);
+        usernameOb.SetActive(true);
     }
 
     // click login button to start login animation
@@ -49,6 +55,7 @@ public class Computer : MonoBehaviour
     {
         loginButton.SetActive(false);
         animator.SetBool("logIn", true);
+        username.enabled = false;
     }
 
     // when log in animation ends
@@ -57,21 +64,24 @@ public class Computer : MonoBehaviour
         animator.SetBool("logIn", false);
         currentSprite = desktopSprite;
         startButton.SetActive(true);
-        currentSprite = desktopSprite;
+        bin.SetActive(true);
+        binOutline.SetActive(false);
+        work.SetActive(true);
+        workOutline.SetActive(false);
     }
 
     public void OnStartBarClick()
     {
         Debug.Log("start button clicked");
-        if (currentSprite != startButtonSprite)
+        if (!startMenu.activeSelf)
         {
-            currentSprite = startButtonSprite;
+            startMenu.SetActive(true);
             Debug.Log("showing start menu");
         }
-        else if (currentSprite == startButtonSprite)
+        else
         {
-            currentSprite = desktopSprite;
-            Debug.Log("closing start menu");
+            startMenu.SetActive(false);
+            Debug.Log("hiding start menu");
         }
     }
 
@@ -83,6 +93,30 @@ public class Computer : MonoBehaviour
     public void OnMouseExit()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
+    public void OnBinClick()
+    {
+        if (!binOutline.activeSelf)
+        {
+            binOutline.SetActive(true);
+        }
+        else
+        {
+            binOutline.SetActive(false);
+        }
+    }
+
+    public void OnWorkClick()
+    {
+        if (!workOutline.activeSelf)
+        {
+            workOutline.SetActive(true);
+        }
+        else
+        {
+            workOutline.SetActive(false);
+        }
     }
 
 
