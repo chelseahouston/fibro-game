@@ -4,20 +4,25 @@ public class Bug : MonoBehaviour
 {
     public float speed = 2.0f;
     public Vector2 targetPosition;
+    public GameObject destroyZone;
 
     void Start()
     {
         // initial position off-screen
-        transform.position = new Vector3(-10f, 0f, 0f);
+        destroyZone = GameObject.FindGameObjectWithTag("DestroyBugZone");
+        transform.position = new Vector3(0f, 0f, 0f);
+        targetPosition = destroyZone.transform.position;
     }
 
     void Update()
     {
         // Move bug towards the target position
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+    }
 
-        // Check if the object reaches the target position
-        if (transform.position == (Vector3)targetPosition)
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "DestroyBugZone")
         {
             Destroy(gameObject);
         }

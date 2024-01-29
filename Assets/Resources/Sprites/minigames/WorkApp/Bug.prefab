@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4821406104273548042}
   - component: {fileID: 8484862364934966453}
   - component: {fileID: 3782613950744869246}
+  - component: {fileID: 8763976049150847469}
   m_Layer: 5
   m_Name: Bug
   m_TagString: Untagged
@@ -36,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 83.59491}
-  m_SizeDelta: {x: 64, y: 128}
+  m_AnchoredPosition: {x: -100.46387, y: 177.09488}
+  m_SizeDelta: {x: 32, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7453520218283077383
 CanvasRenderer:
@@ -133,3 +134,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.19927979, y: -1.8525696}
   m_Size: {x: 59.99353, y: 72.151306}
   m_Direction: 0
+--- !u!114 &8763976049150847469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3718242356278044941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c360c680bc02fb4ebdf1e40c4db79c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  targetPosition: {x: 0, y: 0}
+  destroyZone: {fileID: 0}

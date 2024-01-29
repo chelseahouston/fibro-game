@@ -33,6 +33,7 @@ TagManager:
   - BottomsArrow
   - TShirtArrow
   - Computer
+  - DestroyBugZone
   layers:
   - Default
   - TransparentFX
