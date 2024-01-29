@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class Computer : MonoBehaviour
 {
     public bool on, logIn;
-    public Animator animator;
+    public Animator computerAnimator;
     public GameObject computerPopup, startButton;
     public GameObject loginButton, startMenu;
     public Sprite currentSprite, desktopSprite;
     public Texture2D cursorTexture;
-    public GameObject bin, binOutline, work, workOutline, usernameOb;
+    public GameObject bin, binOutline, work, workOutline, usernameOb, workScreen;
     public TextMeshProUGUI username;
 
     // Start is called before the first frame update
@@ -37,12 +37,13 @@ public class Computer : MonoBehaviour
         computerPopup.SetActive(true);
         loginButton.SetActive(false);
         startButton.SetActive(false);
+        workScreen.SetActive(false);
     }
 
     // login screen computer idle animation with login button enabled
     public void TurnedOnComputer(AnimationEvent animationEvent)
     {
-        animator.SetBool("on", true);
+        computerAnimator.SetBool("on", true);
         username.enabled=true;
         username.text = GameObject.Find("Player").GetComponent<Player>().playerName;
         Debug.Log("Player name = " + username.text);
@@ -54,14 +55,14 @@ public class Computer : MonoBehaviour
     public void loginButtonClick()
     {
         loginButton.SetActive(false);
-        animator.SetBool("logIn", true);
+        computerAnimator.SetBool("logIn", true);
         username.enabled = false;
     }
 
     // when log in animation ends
     public void loggedInComputer(AnimationEvent animationEvent)
     {
-        animator.SetBool("logIn", false);
+        computerAnimator.SetBool("logIn", false);
         currentSprite = desktopSprite;
         startButton.SetActive(true);
         bin.SetActive(true);
@@ -115,17 +116,26 @@ public class Computer : MonoBehaviour
     {
         if (!workOutline.activeSelf)
         {
-            workOutline.SetActive(true);
-            if (binOutline.activeSelf)
-            {
-                binOutline.SetActive(false);
-            }
+            StartCoroutine(OpenWorkApp());
         }
         else
         {
             workOutline.SetActive(false);
         }
     }
+
+    IEnumerator OpenWorkApp()
+    {
+        workOutline.SetActive(true);
+        if (binOutline.activeSelf)
+        {
+            binOutline.SetActive(false);
+        }
+        yield return new WaitForSeconds(2f);
+        workScreen.SetActive(true);
+    }
+
+
 
 
 
