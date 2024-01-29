@@ -10285,6 +10285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 3718242356278044941, guid: 5493ac82498567f45b34c384d12e6b57, type: 3}
   mainScreen: {fileID: 1133700441}
+  parentTransform: {fileID: 1133700442}
   numberOfLives: 5
   spawnInterval: 0.5
   speed: 2
@@ -21783,7 +21784,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 2.2462866
+      m_AnimationSpeed: 1.9180999
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:

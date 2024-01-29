@@ -5,10 +5,9 @@ using UnityEngine;
 public class BugSpawner : MonoBehaviour
 {
     public GameObject objectPrefab, mainScreen;
+    public Transform parentTransform;
     public int numberOfLives;
-    public float spawnInterval = 0.5f;
-    public float speed = 2.0f;
-    public Vector2 targetPosition;
+    public float spawnInterval = 3f;
     public Vector3 pos1, pos2, pos3, pos4, pos5;
     public List<Vector3> spawningPoints = new List<Vector3>();
 
@@ -24,18 +23,23 @@ public class BugSpawner : MonoBehaviour
 
     public void SetSpawnPoints()
     {
-        pos1 = new Vector3(-214.96f, 158.1f, 0f);
-        pos2 = new Vector3(-100.46f, 158.1f, 0f);
-        pos3 = new Vector3(0f, 158.1f, 0f);
-        pos4 = new Vector3(100.46f, 158.1f, 0f);
-        pos5 = new Vector3(214.96f, 158.1f, 0f);
+        pos1 = new Vector3(2.5f, 121f, 0f);
+        pos2 = new Vector3(-100.46f, 121f, 0f);
+        pos3 = new Vector3(0f, 121f, 0f);
+        pos4 = new Vector3(100.46f, 121f, 0f);
+        pos5 = new Vector3(-2.5f, 121f, 0f);
 
         spawningPoints.Clear();
         spawningPoints.Add(pos1);
+        Debug.Log("Pos1 = " + pos1);
         spawningPoints.Add(pos2);
-        spawningPoints.Add(pos3);  
+        Debug.Log("Pos2 = " + pos2);
+        spawningPoints.Add(pos3);
+        Debug.Log("Pos3 = " + pos3);
         spawningPoints.Add(pos4);
+        Debug.Log("Pos4 = " + pos4);
         spawningPoints.Add(pos5);
+        Debug.Log("Pos5 = " + pos5);
     }
 
     void SpawnObject()
@@ -46,11 +50,8 @@ public class BugSpawner : MonoBehaviour
             Vector3 spawnPosition = spawningPoints[Random.Range(0, spawningPoints.Count)];
 
             // Instantiate object at spawn position
-            GameObject obj = Instantiate(objectPrefab, spawnPosition, Quaternion.identity);
-
-            // Set target position for object to move towards
-            obj.GetComponent<Bug>().targetPosition = targetPosition;
-            obj.GetComponent<Bug>().speed = speed;
+            GameObject obj = Instantiate(objectPrefab, spawnPosition, Quaternion.identity, parentTransform);
+            Debug.Log("Spawned at " + obj.transform.position);
         }
     }
 
