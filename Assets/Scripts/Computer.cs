@@ -100,6 +100,10 @@ public class Computer : MonoBehaviour
         if (!binOutline.activeSelf)
         {
             binOutline.SetActive(true);
+            if (workOutline.activeSelf)
+            {
+                workOutline.SetActive(false);
+            }
         }
         else
         {
@@ -112,6 +116,10 @@ public class Computer : MonoBehaviour
         if (!workOutline.activeSelf)
         {
             workOutline.SetActive(true);
+            if (binOutline.activeSelf)
+            {
+                binOutline.SetActive(false);
+            }
         }
         else
         {
