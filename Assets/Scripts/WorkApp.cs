@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WorkApp : MonoBehaviour
 {
-    public GameObject clockInOb;
+    public GameObject clockInOb, mainWorkScreen;
     public TextMeshProUGUI clockIn;
     public Animator workAnimator;
 
@@ -13,6 +13,7 @@ public class WorkApp : MonoBehaviour
     {
         clockInOb.SetActive(false);
         workAnimator.SetBool("ClockingIn", false);
+        mainWorkScreen.SetActive(false);
     }
     public void loadWorkApp(AnimationEvent animationEvent)
     {
@@ -23,6 +24,11 @@ public class WorkApp : MonoBehaviour
     {
         clockInOb.SetActive(false);
         workAnimator.SetBool("ClockingIn", true);
+    }
+
+    public void ClockedIn(AnimationEvent animationEvent)
+    {
+        mainWorkScreen.SetActive(true);
     }
 
 
