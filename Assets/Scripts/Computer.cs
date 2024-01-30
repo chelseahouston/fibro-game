@@ -34,6 +34,7 @@ public class Computer : MonoBehaviour
         // start computer on E key down
     public void StartComputer()
     {
+        GameObject.Find("Player").GetComponent<StopStartPlayerMovement>().AlterPlayerMovement(false);
         computerPopup.SetActive(true);
         loginButton.SetActive(false);
         startButton.SetActive(false);
@@ -133,6 +134,13 @@ public class Computer : MonoBehaviour
         }
         yield return new WaitForSeconds(2f);
         workScreen.SetActive(true);
+    }
+
+    public void ExitComputer()
+    {
+        //play shutting down animation
+        GameObject.Find("Player").GetComponent<StopStartPlayerMovement>().AlterPlayerMovement(true);
+        computerPopup.SetActive(false);
     }
 
 

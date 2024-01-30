@@ -10156,6 +10156,7 @@ GameObject:
   - component: {fileID: 1133700442}
   - component: {fileID: 1133700447}
   - component: {fileID: 1133700446}
+  - component: {fileID: 1133700449}
   - component: {fileID: 1133700448}
   - component: {fileID: 1133700445}
   m_Layer: 5
@@ -10288,14 +10289,24 @@ MonoBehaviour:
   parentTransform: {fileID: 1133700442}
   numberOfLives: 5
   spawnInterval: 0.5
-  speed: 2
-  targetPosition: {x: 0, y: 0}
   pos1: {x: 0, y: 0, z: 0}
   pos2: {x: 0, y: 0, z: 0}
   pos3: {x: 0, y: 0, z: 0}
   pos4: {x: 0, y: 0, z: 0}
   pos5: {x: 0, y: 0, z: 0}
   spawningPoints: []
+--- !u!114 &1133700449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133700441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7defa3e028e3054fa702d3b63d8feef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1138181287
 GameObject:
   m_ObjectHideFlags: 0
@@ -19570,6 +19581,7 @@ GameObject:
   - component: {fileID: 1735572654}
   - component: {fileID: 1735572655}
   - component: {fileID: 1735572656}
+  - component: {fileID: 1735572662}
   - component: {fileID: 1735572658}
   - component: {fileID: 1735572659}
   - component: {fileID: 1735572660}
@@ -19658,6 +19670,7 @@ MonoBehaviour:
   skinbase:
   - {fileID: 288218223}
   - {fileID: 1480598293}
+  playerMovement: {fileID: 1735572662}
 --- !u!50 &1735572655
 Rigidbody2D:
   serializedVersion: 4
@@ -19848,6 +19861,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1735572662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735572651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b18df7def17b44cba4c92185e43ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moving: 0
 --- !u!1 &1767501113
 GameObject:
   m_ObjectHideFlags: 0
@@ -21784,7 +21810,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 1.9180999
+      m_AnimationSpeed: 2.4739368
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
