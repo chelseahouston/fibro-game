@@ -4,30 +4,34 @@ using UnityEngine;
 
 public class BugSpawner : MonoBehaviour
 {
-    public GameObject objectPrefab, mainScreen;
+    public GameObject objectPrefab, mainScreen, destroyZone;
     public Transform parentTransform;
     public int numberOfLives;
-    public float spawnInterval = 3f;
+    public float spawnInterval, spawnInvoke;
     public Vector3 pos1, pos2, pos3, pos4, pos5;
+    public Vector2 targetPosition;
     public List<Vector3> spawningPoints = new List<Vector3>();
+
 
     void Start()
     {
         SetSpawnPoints();
         ResetLives();
-
+        targetPosition = destroyZone.transform.position;
         // Invoke method to spawn objects randomly
-        InvokeRepeating("SpawnObject", 0f, spawnInterval);
+        spawnInvoke = 3f; // start after...
+        spawnInterval = 2f; // repeat every...
+        InvokeRepeating("SpawnObject", spawnInvoke, spawnInterval);
 
     }
 
     public void SetSpawnPoints()
     {
-        pos1 = new Vector3(2.5f, 121f, 0f);
-        pos2 = new Vector3(-100.46f, 121f, 0f);
-        pos3 = new Vector3(0f, 121f, 0f);
-        pos4 = new Vector3(100.46f, 121f, 0f);
-        pos5 = new Vector3(-2.5f, 121f, 0f);
+        pos1 = new Vector3(1058f, 824.499f, 0f);
+        pos2 = new Vector3(1177f, 824.499f, 0f);
+        pos3 = new Vector3(1301.5f, 824.499f, 0f);
+        pos4 = new Vector3(1418.5f, 824.499f, 0f);
+        pos5 = new Vector3(1531f, 824.499f, 0f);
 
         spawningPoints.Clear();
         spawningPoints.Add(pos1);
@@ -50,7 +54,7 @@ public class BugSpawner : MonoBehaviour
             Vector3 spawnPosition = spawningPoints[Random.Range(0, spawningPoints.Count)];
 
             // Instantiate object at spawn position
-            GameObject obj = Instantiate(objectPrefab, spawnPosition, Quaternion.identity, parentTransform);
+            GameObject obj = GameObject.Instantiate(objectPrefab, spawnPosition, Quaternion.identity, parentTransform);
             Debug.Log("Spawned at " + obj.transform.position);
         }
     }
