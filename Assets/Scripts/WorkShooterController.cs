@@ -11,11 +11,14 @@ public class WorkShooterController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public Animator animator;
     public List<GameObject> hearts = new List<GameObject>();
+    private Rigidbody2D rb;
 
     private void Start()
     {
         ResetLives();
         ResetScore();
+        rb = GetComponent<Rigidbody2D>();
+        moveSpeed = 300f;
     }
 
     void Update()
@@ -26,12 +29,18 @@ public class WorkShooterController : MonoBehaviour
             // Handle input to move the mini-game object
             float horizontalInput = Input.GetAxis("Horizontal");
             // float verticalInput = Input.GetAxis("Vertical");
-            moveSpeed = 1.5f;
-            Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed;
-            transform.Translate(movement);
+
+            // Calculate movement direction
+            Vector3 movement = new Vector3(horizontalInput, 0f, 0f);
+
+            // Set the velocity based on the movement direction and speed
+            rb.velocity = movement * moveSpeed;
         }
-
-
+        else
+        {
+            // If the mini-game is not active, stop the object
+            rb.velocity = Vector3.zero;
+        }
     }
 
     public void RecudeLife()
@@ -61,6 +70,11 @@ public class WorkShooterController : MonoBehaviour
         score = 0;
         scoreText.text = "Score: " + score + "";
 
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collided with " + collision.gameObject.name);
     }
 
 
