@@ -1,12 +1,18 @@
+using TMPro;
 using UnityEngine;
 
 public class WorkShooterController : MonoBehaviour
 {
     public float moveSpeed;
+    public int numberOfLives, score;
+    public TextMeshProUGUI scoreText;
+    public Animator animator;
 
     private void Start()
     {
-       moveSpeed = 30f;
+        
+        ResetLives();
+        ResetScore();
     }
 
     void Update()
@@ -17,8 +23,33 @@ public class WorkShooterController : MonoBehaviour
             // Handle input to move the mini-game object
             float horizontalInput = Input.GetAxis("Horizontal");
             // float verticalInput = Input.GetAxis("Vertical");
-            Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed * Time.deltaTime;
+            moveSpeed = 1.5f;
+            Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * moveSpeed;
             transform.Translate(movement);
         }
     }
+
+    public void RecudeLife()
+    {
+        numberOfLives--;
+    }
+
+    public void ResetLives()
+    {
+        numberOfLives = 5;
+    }
+
+    public void IncreaseScore()
+    {
+        score++;
+        scoreText.text = "Score: " + score + "";
+    }
+
+    public void ResetScore() {
+        score = 0;
+        scoreText.text = "Score: " + score + "";
+    }
+
+
+
 }

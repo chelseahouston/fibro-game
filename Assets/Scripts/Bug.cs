@@ -6,12 +6,14 @@ public class Bug : MonoBehaviour
     public float speed;
     public Vector2 startPosition;
     public BugSpawner spawner;
+    public WorkShooterController workshooterController;
 
     void Start()
     {
         // initial position off-screen
         startPosition = transform.position;
         spawner = GetComponentInParent<BugSpawner>();
+        workshooterController = GameObject.Find("PlayerShooter").GetComponent<WorkShooterController>();
         speed = 30f;
     }
 
@@ -28,6 +30,13 @@ public class Bug : MonoBehaviour
         if(collision.name == "DestroyBugZone")
         {
             Destroy(gameObject);
+            workshooterController.RecudeLife();
+        }
+
+        if (collision.name == "Bullet(Clone)")
+        {
+            Destroy(gameObject);
+            workshooterController.IncreaseScore();
         }
     }
 }

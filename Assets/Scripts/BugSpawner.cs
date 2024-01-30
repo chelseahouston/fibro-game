@@ -6,22 +6,22 @@ public class BugSpawner : MonoBehaviour
 {
     public GameObject objectPrefab, mainScreen, destroyZone;
     public Transform parentTransform;
-    public int numberOfLives;
     public float spawnInterval, spawnInvoke;
     public Vector3 pos1, pos2, pos3, pos4, pos5;
     public Vector2 targetPosition;
     public List<Vector3> spawningPoints = new List<Vector3>();
+    public WorkShooterController workShooterController;
 
 
     void Start()
     {
         SetSpawnPoints();
-        ResetLives();
         targetPosition = destroyZone.transform.position;
         // Invoke method to spawn objects randomly
         spawnInvoke = 3f; // start after...
         spawnInterval = 2f; // repeat every...
         InvokeRepeating("SpawnObject", spawnInvoke, spawnInterval);
+        workShooterController = GameObject.Find("PlayerShooter").GetComponent<WorkShooterController>();
 
     }
 
@@ -48,7 +48,7 @@ public class BugSpawner : MonoBehaviour
 
     void SpawnObject()
     {
-        if (numberOfLives > 0 & mainScreen.activeSelf)
+        if (workShooterController.numberOfLives > 0 & mainScreen.activeSelf)
         {
             // Calculate random spawn position
             Vector3 spawnPosition = spawningPoints[Random.Range(0, spawningPoints.Count)];
@@ -59,13 +59,4 @@ public class BugSpawner : MonoBehaviour
         }
     }
 
-    public void RecudeLife()
-    {
-        numberOfLives--;
-    }
-
-    public void ResetLives()
-    {
-        numberOfLives = 5;
-    }
 }
