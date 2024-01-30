@@ -9,7 +9,7 @@ public class MiniGameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        IsMiniGameActive = false; // Mini-game starts inactive
+        IsMiniGameActive = true; // Mini-game starts active
     }
 
     // Call this method to start the mini-game

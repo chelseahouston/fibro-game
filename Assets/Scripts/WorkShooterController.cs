@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class WorkShooterController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed;
+
+    private void Start()
+    {
+       moveSpeed = 30f;
+    }
 
     void Update()
     {

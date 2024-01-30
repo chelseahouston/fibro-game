@@ -7582,6 +7582,7 @@ GameObject:
   - component: {fileID: 831197124}
   - component: {fileID: 831197123}
   - component: {fileID: 831197125}
+  - component: {fileID: 831197126}
   m_Layer: 5
   m_Name: PlayerShooter
   m_TagString: Untagged
@@ -7667,6 +7668,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &831197126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831197121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f35920ac77e0b345b8b56e7c3515481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &855177495
 GameObject:
   m_ObjectHideFlags: 0
@@ -10290,6 +10304,7 @@ MonoBehaviour:
   parentTransform: {fileID: 1133700442}
   numberOfLives: 5
   spawnInterval: 0.5
+  spawnInvoke: 0
   pos1: {x: 0, y: 0, z: 0}
   pos2: {x: 0, y: 0, z: 0}
   pos3: {x: 0, y: 0, z: 0}
@@ -21859,7 +21874,7 @@ Tilemap:
       - {fileID: 828719659, guid: ff3b7d579958ae64380c7cfb4cc291e2, type: 3}
       - {fileID: -426458580, guid: 237fac94b6788fb438bef9657380943f, type: 3}
       - {fileID: -2096029723, guid: 552aa8087cf5ece41be492a602c619c9, type: 3}
-      m_AnimationSpeed: 4.5819974
+      m_AnimationSpeed: 3.2514303
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
