@@ -132,8 +132,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19927979, y: -1.8525696}
-  m_Size: {x: 59.99353, y: 72.151306}
+  m_Offset: {x: -0.19927979, y: 2.2025986}
+  m_Size: {x: 59.99353, y: 64.04097}
   m_Direction: 0
 --- !u!114 &8763976049150847469
 MonoBehaviour:
@@ -150,6 +150,7 @@ MonoBehaviour:
   speed: 2
   startPosition: {x: 0, y: 0}
   spawner: {fileID: 0}
+  workshooterController: {fileID: 0}
 --- !u!50 &6658026055654786161
 Rigidbody2D:
   serializedVersion: 4
