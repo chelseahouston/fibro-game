@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject target;
-    public Camera mainCamera; // Drag your camera into this field in the Unity Editor
+    public Camera mainCamera;
     public float smoothSpeed = 0.125f;
     public Vector3 offset = new Vector3(0f, 0f, -40f);
     public float edgeThreshold = 0.1f;

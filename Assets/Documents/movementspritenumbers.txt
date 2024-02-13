@@ -1,0 +1,5 @@
+20 secs apart (last one 19)
+left 1 0 2 0 0
+right 4 5 3 5 5
+up 14 13 15 13 13
+down 11 10 12 10 10

@@ -9,10 +9,13 @@ public class IncreaseNeeds : MonoBehaviour
     public List<string> needs = new List<string>();
     public List<Item> items = new List<Item>();
     public Item item;
+    public Computer computer;
+    public bool triggerComputer;
 
     void Start()
     {
         AddItems();
+        triggerComputer = false;
     }
 
     private void Update()
@@ -23,8 +26,17 @@ public class IncreaseNeeds : MonoBehaviour
         { // if within trigger area of an object
             if (triggered)
             {
-                // increase the needs for that object
-                item.IncreaseNeeds();
+                if (triggerComputer)
+                {
+                    computer.StartComputer();
+                    
+                }
+                else
+                {
+                    // increase the needs for that object
+                    item.IncreaseNeeds();
+                   
+                }
                 triggered = false; // reset bool
 
             }
@@ -94,6 +106,11 @@ public class IncreaseNeeds : MonoBehaviour
         {
             return;
         }
+        if (thing.tag == "Computer")
+        {
+            triggerComputer = true;
+            triggered = true;
+        }
         else
         {
             GetItem(thing.name);
@@ -110,5 +127,9 @@ public class IncreaseNeeds : MonoBehaviour
     {
         item = null;
         triggered = false;
+        if (triggerComputer)
+        {
+            triggerComputer = false;
+        }
     }
 }

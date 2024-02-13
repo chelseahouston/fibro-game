@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public PlayerData playerData;
     public GameObject hair, trousers, eyes, shoes, tshirt, baseskin, glasses;
     public GameObject[] hairs, bottoms, tshirts, skinbase;
-
+    public StopStartPlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -120,17 +120,20 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (playerMovement.moving)
+        {
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector2 movement = new Vector2(horizontalInput, verticalInput);
-        movement.Normalize();
+            Vector2 movement = new Vector2(horizontalInput, verticalInput);
+            movement.Normalize();
 
-        rb.velocity = movement * moveSpeed;
+            rb.velocity = movement * moveSpeed;
 
-        animator.SetFloat("Vertical", verticalInput);
-        animator.SetFloat("Horizontal", horizontalInput);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+            animator.SetFloat("Vertical", verticalInput);
+            animator.SetFloat("Horizontal", horizontalInput);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
 
         if (timeManager.IsItMailDay())
         {
